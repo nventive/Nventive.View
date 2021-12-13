@@ -633,7 +633,6 @@ namespace Nventive.View.Controls
 		}
 		#endregion
 
-#if !__ANDROID__ && !__IOS__ && !__WASM__ //In Uno, Padding is (incorrectly) defined on Panel
 		#region Padding DependencyProperty
 
 		public Thickness Padding
@@ -647,7 +646,6 @@ namespace Nventive.View.Controls
 			DependencyProperty.Register("Padding", typeof(Thickness), typeof(StarStackPanel), new PropertyMetadata(default(Thickness), InvalidateLayoutOnChanged));
 
 		#endregion
-#endif
 
 		#region struct Record
 		private struct Record
