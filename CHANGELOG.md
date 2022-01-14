@@ -6,15 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-### Added
+### **Added**
 * Support for Android 11 (March, 2021)
 
-### Changed
+### **Changed**
 
-### Deprecated
+### **Deprecated**
 
-### Removed
+### **Removed**
+| **Control** | **Alternative**|
+|------|-----------------|
+|  Image Presenter    |     ImagEx (**WCT**)  |
 
-### Fixed
+### **Fixed**
 
-### Security
+### **Security**
