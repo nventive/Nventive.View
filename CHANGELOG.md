@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 |------|-----------------|
 |  Image Presenter    |     ImagEx (**WCT**)  |
 |  SwipableItem    |     SwipeControl (in Uno, UWP, WinUI)  |
+|  MembershipCardControl    |    TODO: create its own package |
 
 ### **Fixed**
 
+### Security
