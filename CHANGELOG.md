@@ -19,7 +19,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 |  Image Presenter    |     ImagEx (**WCT**)  |
 |  SwipableItem    |     SwipeControl (in Uno, UWP, WinUI)  |
 |  MembershipCardControl    |    TODO: create its own package |
+|  LandscapeUprightPanel    |    TODO: create its own package for cards control |
+|  LogCounterControl    |     N/A  |
+|  StickyGroupHeaderBehavior    |     N/A  |
+|  FromDoubleArithmeticToStringConverter    |     N/A  |
+|  Lottie    |     Lottie (**WCT**)  |
+|  PathControl    |     PathIcon (**Uno**)  |
 
-### **Fixed**
+| **Extension** | **Alternative**|
+|------|-----------------|
+|  ControlExtensions.AutoFocus   |     AutoFocus Behavior and FocusTracker (**WCT**)  |
 
-### Security
+### Fixed
+
+### **Security**
