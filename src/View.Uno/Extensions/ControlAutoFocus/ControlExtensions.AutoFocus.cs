@@ -1,4 +1,4 @@
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -50,7 +50,8 @@ namespace Nventive.View.Extensions
 			if (isAutoFocusOnceEnabled)
 			{
 				// We attempt to gain focus in case textbox has already been loaded
-				RequestFocus(control);
+				FocusIfLoaded(control);
+
 				control.Loaded -= OnLoadedOnce;
 				control.Loaded += OnLoadedOnce;
 			}
@@ -72,7 +73,6 @@ namespace Nventive.View.Extensions
 			bool isAutoFocusEnabled = GetIsAutofocusingOnce(control);
 			if (isAutoFocusEnabled)
 			{
-				RequestFocus(control);
 
 				// Unsubscribe to loaded once focused
 				control.Loaded -= OnLoadedOnce;
@@ -123,7 +123,8 @@ namespace Nventive.View.Extensions
 			if (isAutoFocusEnabled)
 			{
 				// We attempt to gain focus in case textbox has already been loaded
-				RequestFocus(control);
+				FocusIfLoaded(control);
+
 				control.Loaded -= OnLoaded;
 				control.Loaded += OnLoaded;
 				control.DataContextChanged -= OnDataContextChanged;
@@ -178,6 +179,22 @@ namespace Nventive.View.Extensions
 				// If we are loaded but AutoFocus isn't enabled, we unsubscribe.
 				control.Loaded -= OnLoaded;
 				control.DataContextChanged -= OnDataContextChanged;
+			}
+		}
+
+		/// <summary>
+		/// Focuses the control, but only if it is already loaded.
+		/// </summary>
+		/// <param name="control">Control.</param>
+		private static void FocusIfLoaded(Control control)
+		{
+			// On Android we need to ensure the focus is attempted
+			// only if the control is actually loaded. If not, it
+			// may cause invalid sequence of native focus events
+			// for TextBox (see https://github.com/unoplatform/uno/issues/6572#issuecomment-1029177971)
+			if (control.IsLoaded)
+			{
+				RequestFocus(control);
 			}
 		}
 
