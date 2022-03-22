@@ -15,7 +15,7 @@ using AndroidX.RecyclerView.Widget;
 
 namespace Nventive.View.Controls
 {
-	public partial class NativeSwipeRefresh : SwipeRefreshLayout, DependencyObject
+	public partial class NativeSwipeRefresh : SwipeRefreshLayout
 	{
 		public NativeSwipeRefresh() : base(ContextHelper.Current) { }
 
