@@ -3,8 +3,6 @@
 	<ResourceDictionary.MergedDictionaries>
 		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/DelayControl/DelayControl.xaml" />
 		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/ImageSlideshow/ImageSlideshow.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/LogCounterControl/LogCounterControl.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/MembershipCardControl/MembershipCardControl.xaml" />
 		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/PathControl/PathControl.xaml" />
 		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/ParallaxListView/ParallaxListView.xaml" />
 		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/PeekingFlipView/PeekingFlipView.xaml" />
