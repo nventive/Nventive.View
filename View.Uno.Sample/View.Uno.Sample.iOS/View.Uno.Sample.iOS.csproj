@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>a88ed13d-4eb2-44c8-b876-1ad35ec1e502</ProjectGuid>
+    <ProjectGuid>{A88ED13D-4EB2-44C8-B876-1AD35EC1E502}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>View.Uno.Sample</RootNamespace>
@@ -170,10 +170,12 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Media" Visible="false" />
-    <Folder Include="Media\AppIcons" Visible="false" />
-    <Folder Include="Media\LaunchImages" Visible="false" />
+    <ProjectReference Include="..\..\src\View.Uno\View.Uno.csproj">
+      <Project>{58d94e26-9a4a-45ad-9f5e-2fcb9b2f0eae}</Project>
+      <Name>View.Uno</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
