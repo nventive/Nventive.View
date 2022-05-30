@@ -1,4 +1,4 @@
-<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
   <PropertyGroup>
 		<!-- Change the TargetFrameworks depending on which platform you are building on. This avoids errors as it is impossible to build UAP on OSX (MacOS) -->
 		<TargetFrameworks Condition="'$([MSBuild]::IsOsPlatform(OSX))'">netstandard2.0;xamarinios10;</TargetFrameworks>
@@ -12,7 +12,8 @@
 		<PackageId>Nventive.View.Uno</PackageId>
 		<Description>Nventive.View.Uno</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<_Uno_XamlMerge_Task_Version>1.0.0</_Uno_XamlMerge_Task_Version>
+		<_Uno_XamlMerge_Task_Version>1.1.0-dev.13</_Uno_XamlMerge_Task_Version>
+		<XamlMergeOutputFile>$(MSBuildProjectDirectory)\Themes\MergedResourceDictionaries.xaml</XamlMergeOutputFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">

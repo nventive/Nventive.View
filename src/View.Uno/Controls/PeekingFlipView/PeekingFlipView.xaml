@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:u="using:Nventive.View.Controls"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	xmlns:xamarin="http://nventive.com/xamarin"
+	xmlns:xamarin="http://uno.ui/xamarin"
     mc:Ignorable="xamarin">
 
 	<Style x:Key="DefaultPeekingFlipViewStyle"
