@@ -145,7 +145,18 @@ namespace Nventive.View.Extensions
 		private static void OnLoaded(object sender, RoutedEventArgs e)
 		{
 			var control = sender as Control;
-			ApplyAutoFocus(control);
+#if !__IOS__ && !__MACOS__
+			ApplyAutoFocus(control);			
+#else
+			// When UITextField is focused right after it is moved to window,
+			// the first responder request will succeed, but the keyboard will
+			// not be displayed - we must delay the request slightly.
+			// https://github.com/unoplatform/uno/issues/9003
+			await control.Dispatcher.RunIdleAsync(d =>
+			{
+				ApplyAutoFocus(control);
+			});
+#endif
 		}
 
 		/// <summary>
