@@ -142,11 +142,15 @@ namespace Nventive.View.Extensions
 		/// </summary>
 		/// <param name="sender">Control</param>
 		/// <param name="e">Event</param>
-		private static void OnLoaded(object sender, RoutedEventArgs e)
+		private static
+#if __IOS__ || __MACOS__
+			async
+#endif
+			void OnLoaded(object sender, RoutedEventArgs e)
 		{
 			var control = sender as Control;
 #if !__IOS__ && !__MACOS__
-			ApplyAutoFocus(control);			
+			ApplyAutoFocus(control);
 #else
 			// When UITextField is focused right after it is moved to window,
 			// the first responder request will succeed, but the keyboard will
@@ -232,6 +236,6 @@ namespace Nventive.View.Extensions
 				}
 			}
 		}
-	} 
+	}
 }
 #endif
