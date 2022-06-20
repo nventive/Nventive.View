@@ -12,6 +12,8 @@
 		<PackageId>Nventive.View.Uno</PackageId>
 		<Description>Nventive.View.Uno</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<_Uno_XamlMerge_Task_Version>1.1.0-dev.13</_Uno_XamlMerge_Task_Version>
+		<XamlMergeOutputFile>$(MSBuildProjectDirectory)\Themes\MergedResourceDictionaries.xaml</XamlMergeOutputFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
@@ -24,8 +26,15 @@
     <PackageReference Include="Uno.Core" Version="4.0.1" />
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.7" />
 	  <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.0" />
-		<PackageReference Include="System.Reactive" Version="4.4.1" />
+	  <PackageReference Include="System.Reactive" Version="4.4.1" />
+	  <PackageReference Include="Uno.XamlMerge.Task">
+		  <Version>$(_Uno_XamlMerge_Task_Version)</Version>
+	  </PackageReference>
   </ItemGroup>
+
+	<ItemGroup>
+		<XamlMergeInput Include="Controls\**\*.xaml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="System.Xml" />
@@ -99,4 +108,7 @@
 			<Generator>ResXFileCodeGenerator</Generator>
 		</EmbeddedResource>
 	</ItemGroup>
+
+	<Import Project="$(NuGetPackageRoot)uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" 
+					Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
 </Project>

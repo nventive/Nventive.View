@@ -1,13 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<ResourceDictionary.MergedDictionaries>
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/DelayControl/DelayControl.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/ImageSlideshow/ImageSlideshow.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/PathControl/PathControl.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/ParallaxListView/ParallaxListView.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/PeekingFlipView/PeekingFlipView.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/PeekingFlipView/PeekingFlipViewItem.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/SwipeRefresh/SwipeRefresh.xaml" />
-		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Controls/ZoomControl/ZoomControl.xaml" />
+		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno/Themes/MergedResourceDictionaries.xaml" />
 	</ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
