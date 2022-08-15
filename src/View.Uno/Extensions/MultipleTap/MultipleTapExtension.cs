@@ -81,6 +81,8 @@ namespace Nventive.View.Extensions
 		
 		private static void ExecuteCommand(object sender, PointerRoutedEventArgs args)
 		{
+			args.Handled = true;
+
 			var dependencyObject = sender as DependencyObject;
 
 			var command = GetCommand(dependencyObject);
