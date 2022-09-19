@@ -8,6 +8,7 @@ using Android.Widget;
 using Uno.Disposables;
 using Uno.Extensions;
 using Uno.UI;
+using Uno.UI.Controls;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -79,6 +80,21 @@ namespace Nventive.View.Controls
 			if (_nativeSwipeRefresh != null)
 			{
 				_nativeSwipeRefresh.Content = Content as Android.Views.View;
+			}
+
+			if (Content is BindableView bv)
+			{
+				bv.DataContext = DataContext;
+			}
+		}
+
+		protected override void OnDataContextChanged()
+		{
+			base.OnDataContextChanged();
+
+			if (Content is BindableView bv)
+			{
+				bv.DataContext = DataContext;
 			}
 		}
 
