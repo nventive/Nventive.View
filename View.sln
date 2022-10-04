@@ -17,13 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.iOS", "View
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.UWP", "View.Uno.Sample\View.Uno.Sample.UWP\View.Uno.Sample.UWP.csproj", "{34A5DBF6-31B9-4B1F-8562-9514EEFF533B}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "View.Shared", "src\View.Shared\View.Shared.shproj", "{56DC53AB-CD82-4C07-AE15-295848E83F14}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{21e02bb2-8841-4226-b06e-65a24b79c319}*SharedItemsImports = 4
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{34a5dbf6-31b9-4b1f-8562-9514eeff533b}*SharedItemsImports = 4
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{a88ed13d-4eb2-44c8-b876-1ad35ec1e502}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Android = Ad-Hoc|Android
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -525,5 +521,12 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BA7DD68-E008-4F53-8F51-83D42D3877B9}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{21e02bb2-8841-4226-b06e-65a24b79c319}*SharedItemsImports = 4
+		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{34a5dbf6-31b9-4b1f-8562-9514eeff533b}*SharedItemsImports = 4
+		src\View.Shared\View.Shared.projitems*{56dc53ab-cd82-4c07-ae15-295848e83f14}*SharedItemsImports = 13
+		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{a88ed13d-4eb2-44c8-b876-1ad35ec1e502}*SharedItemsImports = 4
 	EndGlobalSection
 EndGlobal
