@@ -9,5 +9,107 @@
     <Import_RootNamespace>View.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\AnimatedContentControl\AnimatedContentControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\AnimatedControl\AnimatedControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\AnimatedHeaderControl\AnimatedHeaderControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\DelayControl\DelayControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageSlideshow\ImageSlideshow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ImageSlideshow\ImageSlideshow.Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ParallaxListView\ParallaxListView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ParallaxListView\ParallaxListView.Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PathControl\PathControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PeekingFlipView\PeekingFlipView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PeekingFlipView\PeekingFlipViewItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\NativeSwipeRefresh.Android.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\NativeSwipeRefresh.iOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.Android.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.iOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.UWP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ZoomControl\ResetViewPortZoomControlBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ZoomControl\ZoomControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataTemplateSelectors\TypesDataTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\BindableVisualState\BindableVisualState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ComboBox\ComboBoxSynchronizerBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlAutoFocus\ControlExtensions.AutoFocus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlGotFocus\ControlExtensions.GotFocusBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ControlLostFocus\ControlExtensions.LostFocusBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ExpandIntoOverscroll\ExpandIntoOverscrollBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Hyperlink\HyperlinkExtensions.Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\InputPane\InputPaneExtensions.PanIntoView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ListView\GroupedCollectionBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ListView\ListViewBaseExtensions.BringSelectedItemIntoView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ListView\ListViewBaseExtensions.Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ListView\ListViewBaseMultiColumnExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ListView\ListViewBaseMultipleSelectionBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\MultipleTap\MultipleTapExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Page\PageBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PasswordBox\PasswordBoxBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PasswordBox\PasswordBoxBehavior.UWP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\PasswordBox\PasswordEnterCommand.Xamarin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Rect\RectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ScrollViewer\ScrollViewerExtensions.ScrollIndicatorStyle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ScrollViewer\ScrollViewerExtensions.UWP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\SplitView\SplitViewBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\SplitView\SplitViewExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\HtmlTextBlockBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\HtmlTextBlockBehavior.Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\TextBlockBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\InputAccessoryViewBehavior.iOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\TextBoxBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\TextBoxBehavior.UWP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\TextBoxBehavior.Xamarin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\TextBoxExtensions.AutoUpdateBindingDelay.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\ActionDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\DependencyObjectExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\MainDispatcher\MainDispatcherScheduler.Android.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\MainDispatcher\MainDispatcherScheduler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\MainDispatcher\MainDispatcherScheduler.iOS.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\MainDispatcher\MainDispatcherScheduler.UWP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\MainDispatcher\MainDispatcherScheduler.WASM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\ObservableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\PropertyMetadataHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\SizeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internal\Windows.UI.CoreDispatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Panels\ProportionalPanel\ProportionalPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Panels\SnapPanel\SnapAnchor.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Panels\SnapPanel\SnapPanel.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Panels\SnapPanel\SnapPoint.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Panels\SnapPanel\SnapPointInfo.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Panels\StarStackPanel\StarStackPanel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Controls\DelayControl\DelayControl.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\ImageSlideshow\ImageSlideshow.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\ParallaxListView\ParallaxListView.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\PathControl\PathControl.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\PeekingFlipView\PeekingFlipView.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\PeekingFlipView\PeekingFlipViewItem.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.xaml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)Controls\ZoomControl\ZoomControl.xaml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

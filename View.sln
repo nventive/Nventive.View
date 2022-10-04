@@ -526,6 +526,7 @@ Global
 		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{21e02bb2-8841-4226-b06e-65a24b79c319}*SharedItemsImports = 4
 		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{34a5dbf6-31b9-4b1f-8562-9514eeff533b}*SharedItemsImports = 4
 		src\View.Shared\View.Shared.projitems*{56dc53ab-cd82-4c07-ae15-295848e83f14}*SharedItemsImports = 13
+		src\View.Shared\View.Shared.projitems*{58d94e26-9a4a-45ad-9f5e-2fcb9b2f0eae}*SharedItemsImports = 5
 		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
 		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{a88ed13d-4eb2-44c8-b876-1ad35ec1e502}*SharedItemsImports = 4
 	EndGlobalSection
