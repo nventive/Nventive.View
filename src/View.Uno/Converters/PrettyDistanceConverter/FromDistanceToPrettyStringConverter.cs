@@ -4,7 +4,11 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using Uno.Extensions;
-#if WINDOWS_UWP || __WASM__
+#if WINUI
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml;
+using GenericCulture = System.String;
+#elif WINDOWS_UWP || __WASM__
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml;
 using GenericCulture = System.String;
@@ -52,7 +56,7 @@ namespace Nventive.View.Converters
 				throw new ArgumentException("This converter does not use any parameters");
 			}
 
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__WASM__
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !__WINDOWS10_0_18362_0__
 			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
 #else
 			var cultureInfo = string.IsNullOrWhiteSpace(culture) ?  CultureInfo.CurrentCulture : new CultureInfo(culture);

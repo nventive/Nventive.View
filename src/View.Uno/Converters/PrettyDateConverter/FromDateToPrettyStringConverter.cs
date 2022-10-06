@@ -2,7 +2,10 @@
 using System.Reflection;
 using System.Threading;
 using System.Windows;
-#if WINDOWS_UWP || __WASM__
+#if WINUI
+using Microsoft.UI.Xaml.Data;
+using GenericCulture = System.String;
+#elif WINDOWS_UWP || __WASM__
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml;
 using GenericCulture = System.String;

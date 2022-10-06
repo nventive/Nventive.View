@@ -1,0 +1,105 @@
+﻿#if WINUI && !__WINDOWS10_0_18362_0__ && !__WASM__
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
+
+namespace Nventive.View.Extensions
+{
+	public partial class TextBoxBehavior
+	{
+		/// <summary>
+		/// Move focus to next control
+		/// </summary>
+		/// <param name="sender">Textbox</param>
+		/// <param name="e">Event</param>
+		private static void FocusNextControl(TextBox textBox)
+		{
+			if (textBox != null)
+			{
+				var nextControl = GetNextControl(textBox);
+#if __IOS__
+				nextControl.BecomeFirstResponder();
+				nextControl.StartBringIntoView();
+#elif __ANDROID__
+				nextControl.RequestFocus();
+
+#elif __WASM__ || __MACOS__
+				nextControl.StartBringIntoView();
+#endif
+			}
+		}
+
+		/// <summary>
+		/// Executes the enter command (command executed when pressing the enter button)
+		/// </summary>
+		/// <param name="sender">Target TextBox</param>
+		/// <param name="e">Event</param>
+		private static void TryExecuteEnterCommand(object sender, KeyRoutedEventArgs e)
+		{
+			var box = sender as TextBox;
+			if (box == null)
+			{
+				return;
+			}
+
+			var cmd = GetEnterCommand(box);
+			if (cmd == null)
+			{
+				return;
+			}
+
+			const object param = null;
+			if (cmd.CanExecute(param))
+			{
+				UpdateBinding(box);
+
+				cmd.Execute(param);
+			}
+		}
+
+		/// <summary>
+		/// Update the TextBox's Text property 
+		/// </summary>
+		/// <param name="textBox">Target TextBox</param>
+		private static void UpdateBinding(TextBox textBox)
+		{
+			textBox
+				.GetBindingExpression(TextBox.TextProperty)?
+				.UpdateSource();
+		}
+
+		/// <summary>
+		/// Dismisses the keyboard
+		/// </summary>
+		/// <param name="textBoxBox">Target TextBoxBox</param>
+		/// #region Dismiss Keyboard Property
+
+		private static void TryDismissKeyboard(TextBox textBox)
+		{
+			if (textBox == null)
+			{
+				return;
+			}
+
+			if (GetDismissKeyboardOnEnter(textBox))
+			{
+#if __ANDROID__
+				if (textBox == null)
+				{
+					return;
+				}
+
+				var inputManager = Uno.UI.ContextHelper.Current.GetSystemService(Android.Content.Context.InputMethodService)
+					as Android.Views.InputMethods.InputMethodManager;
+
+				inputManager?.HideSoftInputFromWindow(
+					textBox.WindowToken,
+					Android.Views.InputMethods.HideSoftInputFlags.None
+				);
+#else
+				return;
+#endif
+			}
+		}
+	}
+}
+#endif
