@@ -11,21 +11,21 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 	{
 		private const string ResourcePrefix = "Nventive.View/PrettyDateFormatterStrings/";
 
-		private static ResourceMap resourceMan;
+		private static ResourceMap _resourceMap;
 
 		internal PrettyDateFormatterStrings()
 		{
 		}
 
-		internal static ResourceMap ResourceManager
+		internal static ResourceMap _resourceManager
 		{
 			get
 			{
-				if (object.ReferenceEquals(resourceMan, null))
+				if (object.ReferenceEquals(_resourceMap, null))
 				{
-					resourceMan = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap;
+					_resourceMap = Windows.ApplicationModel.Resources.Core.ResourceManager.Current.MainResourceMap;
 				}
-				return resourceMan;
+				return _resourceMap;
 			}
 		}
 
@@ -36,7 +36,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "CompleteDateFormat").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "CompleteDateFormat").ValueAsString;
 			}
 		}
 
@@ -47,7 +47,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "DayFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "DayFormatString").ValueAsString;
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "DaysFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "DaysFormatString").ValueAsString;
 			}
 		}
 
@@ -69,7 +69,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "HourFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "HourFormatString").ValueAsString;
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "HoursFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "HoursFormatString").ValueAsString;
 			}
 		}
 
@@ -91,7 +91,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "MinuteFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "MinuteFormatString").ValueAsString;
 			}
 		}
 
@@ -102,7 +102,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "MinutesFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "MinutesFormatString").ValueAsString;
 			}
 		}
 
@@ -113,7 +113,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "Now").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "Now").ValueAsString;
 			}
 		}
 
@@ -124,7 +124,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "SecondFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "SecondFormatString").ValueAsString;
 			}
 		}
 
@@ -135,7 +135,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "SecondsFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "SecondsFormatString").ValueAsString;
 			}
 		}
 
@@ -146,7 +146,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "WeekFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "WeekFormatString").ValueAsString;
 			}
 		}
 
@@ -157,7 +157,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "WeeksFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "WeeksFormatString").ValueAsString;
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "YearFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "YearFormatString").ValueAsString;
 			}
 		}
 
@@ -179,7 +179,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "YearsFormatString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "YearsFormatString").ValueAsString;
 			}
 		}
 
@@ -190,7 +190,7 @@ namespace Nventive.View.Converters.PrettyDateConverter.Resources
 		{
 			get
 			{
-				return ResourceManager.GetValue(ResourcePrefix + "YesterdayString").ValueAsString;
+				return _resourceManager.GetValue(ResourcePrefix + "YesterdayString").ValueAsString;
 			}
 		}
 	}

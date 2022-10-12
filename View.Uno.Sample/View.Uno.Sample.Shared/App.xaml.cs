@@ -35,8 +35,8 @@ namespace View.Uno.Sample
 
 			this.InitializeComponent();
 
-#if HAS_UNO || NETFX_CORE
-            this.Suspending += OnSuspending;
+#if HAS_UNO || WINDOWS_UWP
+			this.Suspending += OnSuspending;
 #endif
 		}
 
@@ -132,7 +132,7 @@ namespace View.Uno.Sample
                 builder.AddProvider(new global::Uno.Extensions.Logging.WebAssembly.WebAssemblyConsoleLoggerProvider());
 #elif __IOS__
                 builder.AddProvider(new global::Uno.Extensions.Logging.OSLogLoggerProvider());
-#elif NETFX_CORE
+#elif WINDOWS_UWP
                 builder.AddDebug();
 #else
 				builder.AddConsole();
