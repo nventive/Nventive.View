@@ -75,11 +75,12 @@ namespace Nventive.View.Controls
 		{
 			_isLoaded = true;
 
+#if !WINUI
 			_flipView.SelectionChanged -= OnFlipViewItemChanged;
 			_flipView.SelectionChanged += OnFlipViewItemChanged;
+#endif
 
 			Update();
-
 		}
 
 		private void OnUnloaded(object sender, RoutedEventArgs e)
