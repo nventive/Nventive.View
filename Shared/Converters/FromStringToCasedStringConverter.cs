@@ -59,16 +59,9 @@ namespace Nventive.View.Converters
 				return value;
 			}
 
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINDOWS10_0_18362_0
-			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
-			return this.CasingType == Converters.CasingType.LowerCase ?
-				text.ToLower(cultureInfo) : 
-				text.ToUpper(cultureInfo);
-#else
 			return this.CasingType == Converters.CasingType.LowerCase ?
 				text.ToLower() : 
 				text.ToUpper();
-#endif
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, GenericCulture culture)

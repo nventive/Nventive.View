@@ -29,11 +29,7 @@ namespace Nventive.View.Converters
 	/// A default value can be provided, in which case it will act as a partition itself, matching any other element of the set.
 	/// If both <see cref="Partitions"/> and a <see cref="PartitionStrategy"/> are provided, the <see cref="Partitions" /> have precedence.
 	/// </remarks>
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINDOWS10_0_18362_0
 	[ContentProperty(Name = nameof(Partitions))]
-#else
-	[ContentProperty(nameof(Partitions))]
-#endif
 	public class PartitionConverter : ConverterBase
 	{
 		public PartitionConverter()

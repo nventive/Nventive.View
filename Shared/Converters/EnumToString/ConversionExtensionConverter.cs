@@ -48,7 +48,6 @@ namespace Nventive.View.Converters
 				return null;
 			}
 
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINDOWS10_0_18362_0
 			if (string.IsNullOrWhiteSpace(culture))
 			{
 				return _extensions.To(_extensions.Conversion(value), targetType);
@@ -57,9 +56,6 @@ namespace Nventive.View.Converters
 			{
 				return _extensions.To(_extensions.Conversion(value), targetType, new CultureInfo(culture));
 			}
-#else
-			return _extensions.To(_extensions.Conversion(value), targetType, culture);
-#endif
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, GenericCulture culture)
