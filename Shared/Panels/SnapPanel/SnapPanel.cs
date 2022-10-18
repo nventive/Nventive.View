@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP
+﻿#if WINDOWS_UWP || WINDOWS
 // TODO: Add SnapPanel to Windows .NET 6 https://github.com/nventive/Nventive.View/issues/49
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,15 @@ using System.Linq;
 using System.Text;
 using Uno.Extensions;
 using Windows.Foundation;
+#if WINUI
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+#endif
 
 namespace Nventive.View.Controls
 {

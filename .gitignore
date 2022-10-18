@@ -333,3 +333,5 @@ ASALocalRun/
 # Ignore generated style file
 src/View.Uno/Themes/MergedResourceDictionaries.xaml
 src/View.Uno/Generated/
+src/View.Uno.WinUI/Themes/MergedResourceDictionaries.xaml
+src/View.Uno.WinUI/Generated/

@@ -13,8 +13,12 @@
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<PackageTags>mvvm;ios;android;maui;winui;WinAppSDK;</PackageTags>
 	<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
-	<!-- TODO: XAML merge will need to be implemented in the future, like it is implemented for the Uno project currently-->
-	<!-- https://github.com/nventive/Nventive.View/issues/48 -->
+	<_Uno_XamlMerge_Task_Version>1.1.0-dev.13</_Uno_XamlMerge_Task_Version>
+	<XamlMergeOutputFile>$(MSBuildProjectDirectory)\Themes\MergedResourceDictionaries.xaml</XamlMergeOutputFile>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+	<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
   </PropertyGroup>
 	
   <ItemGroup>
@@ -24,14 +28,17 @@
 	<PackageReference Include="System.Reactive" Version="5.0.0" />
 	<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.7" />
 	<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+	<PackageReference Include="Uno.XamlMerge.Task">
+		<Version>$(_Uno_XamlMerge_Task_Version)</Version>
+	</PackageReference>
   </ItemGroup>
 	
-  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-	<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
-  </PropertyGroup>
+  <ItemGroup>
+	<XamlMergeInput Include="..\..\Shared\Controls\**\*.xaml" />
+  </ItemGroup>
 
 	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0-windows10.0.18362'">
-		<DefineConstants>$(DefineConstants);__Windows__</DefineConstants>
+		<DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
 	</PropertyGroup>
 	
   <ItemGroup Condition="'$(TargetFramework)'=='net6.0-windows10.0.18362'">
@@ -50,6 +57,7 @@
   <ItemGroup>
     <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
   </ItemGroup>
-	
+
+	<Import Project="$(NuGetPackageRoot)uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
   <Import Project="..\..\Shared\Shared.projitems" Label="Shared" />
 </Project>

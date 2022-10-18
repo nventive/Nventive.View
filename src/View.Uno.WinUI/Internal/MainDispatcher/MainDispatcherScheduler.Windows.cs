@@ -1,4 +1,4 @@
-﻿#if __Windows__
+﻿#if WINDOWS
 // TODO: Implement a CoreDispatcherScheduler equivalence for Windows .NET 6 https://github.com/nventive/Nventive.View/issues/50
 using System;
 using System.Reactive.Concurrency;

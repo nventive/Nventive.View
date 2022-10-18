@@ -1,4 +1,4 @@
-﻿#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || __Windows__
+﻿#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINDOWS
 using System;
 using System.Reactive.Concurrency;
 using System.Reactive.Disposables;

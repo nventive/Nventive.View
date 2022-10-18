@@ -1,9 +1,14 @@
-﻿#if WINDOWS_UWP
+﻿#if WINDOWS_UWP || WINDOWS
 using System;
 using System.Collections.Generic;
 using System.Text;
+#if WINUI
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+#endif
 
 namespace Nventive.View.Controls
 {
