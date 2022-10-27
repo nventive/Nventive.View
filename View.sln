@@ -5,23 +5,21 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{FD058962-1F0C-422E-B02A-0A46444FA225}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{86C58152-7352-4028-9367-F76E3CF8AB95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.Droid", "src\View.Uno.Sample\View.Uno.Sample.Droid\View.Uno.Sample.Droid.csproj", "{21E02BB2-8841-4226-B06E-65A24B79C319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.Droid", "View.Uno.Sample\View.Uno.Sample.Droid\View.Uno.Sample.Droid.csproj", "{21E02BB2-8841-4226-B06E-65A24B79C319}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.iOS", "src\View.Uno.Sample\View.Uno.Sample.iOS\View.Uno.Sample.iOS.csproj", "{A88ED13D-4EB2-44C8-B876-1AD35EC1E502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.iOS", "View.Uno.Sample\View.Uno.Sample.iOS\View.Uno.Sample.iOS.csproj", "{A88ED13D-4EB2-44C8-B876-1AD35EC1E502}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.UWP", "View.Uno.Sample\View.Uno.Sample.UWP\View.Uno.Sample.UWP.csproj", "{34A5DBF6-31B9-4B1F-8562-9514EEFF533B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View.Uno.Sample.UWP", "src\View.Uno.Sample\View.Uno.Sample.UWP\View.Uno.Sample.UWP.csproj", "{34A5DBF6-31B9-4B1F-8562-9514EEFF533B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "View.Uno.WinUI", "src\View.Uno.WinUI\View.Uno.WinUI.csproj", "{4DDAB2D8-B610-4FAC-963E-E90EB18947B2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{5514D227-CF4F-4433-9CFB-0A5B6C12E748}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "View.Uno", "src\View.Uno\View.Uno.csproj", "{7CD2CFDF-9996-461E-BC43-0530AAE73496}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{EAD97829-803E-4A38-AC6E-90E9A6100715}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "View.Uno.Shared", "src\View.Uno.Shared\View.Uno.Shared.shproj", "{EAD97829-803E-4A38-AC6E-90E9A6100715}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "View.Uno.Sample.Shared", "View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "View.Uno.Sample.Shared", "src\View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{FEF47F84-F1E9-4614-BE34-4760890052F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -605,23 +603,24 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{86C58152-7352-4028-9367-F76E3CF8AB95} = {FD058962-1F0C-422E-B02A-0A46444FA225}
-		{21E02BB2-8841-4226-B06E-65A24B79C319} = {86C58152-7352-4028-9367-F76E3CF8AB95}
-		{A88ED13D-4EB2-44C8-B876-1AD35EC1E502} = {86C58152-7352-4028-9367-F76E3CF8AB95}
-		{34A5DBF6-31B9-4B1F-8562-9514EEFF533B} = {86C58152-7352-4028-9367-F76E3CF8AB95}
-		{5514D227-CF4F-4433-9CFB-0A5B6C12E748} = {86C58152-7352-4028-9367-F76E3CF8AB95}
-		{6279C845-92F8-4333-AB99-3D213163593C} = {86C58152-7352-4028-9367-F76E3CF8AB95}
+		{21E02BB2-8841-4226-B06E-65A24B79C319} = {FD058962-1F0C-422E-B02A-0A46444FA225}
+		{A88ED13D-4EB2-44C8-B876-1AD35EC1E502} = {FD058962-1F0C-422E-B02A-0A46444FA225}
+		{34A5DBF6-31B9-4B1F-8562-9514EEFF533B} = {FD058962-1F0C-422E-B02A-0A46444FA225}
+		{4DDAB2D8-B610-4FAC-963E-E90EB18947B2} = {FEF47F84-F1E9-4614-BE34-4760890052F9}
+		{7CD2CFDF-9996-461E-BC43-0530AAE73496} = {FEF47F84-F1E9-4614-BE34-4760890052F9}
+		{EAD97829-803E-4A38-AC6E-90E9A6100715} = {FEF47F84-F1E9-4614-BE34-4760890052F9}
+		{6279C845-92F8-4333-AB99-3D213163593C} = {FD058962-1F0C-422E-B02A-0A46444FA225}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BA7DD68-E008-4F53-8F51-83D42D3877B9}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{21e02bb2-8841-4226-b06e-65a24b79c319}*SharedItemsImports = 4
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{34a5dbf6-31b9-4b1f-8562-9514eeff533b}*SharedItemsImports = 4
-		Shared\Shared.projitems*{4ddab2d8-b610-4fac-963e-e90eb18947b2}*SharedItemsImports = 5
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		Shared\Shared.projitems*{7cd2cfdf-9996-461e-bc43-0530aae73496}*SharedItemsImports = 5
-		View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{a88ed13d-4eb2-44c8-b876-1ad35ec1e502}*SharedItemsImports = 4
-		Shared\Shared.projitems*{ead97829-803e-4a38-ac6e-90e9a6100715}*SharedItemsImports = 13
+		src\View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{21e02bb2-8841-4226-b06e-65a24b79c319}*SharedItemsImports = 4
+		src\View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{34a5dbf6-31b9-4b1f-8562-9514eeff533b}*SharedItemsImports = 4
+		src\View.Uno.Shared\Shared.projitems*{4ddab2d8-b610-4fac-963e-e90eb18947b2}*SharedItemsImports = 5
+		src\View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		src\View.Uno.Shared\Shared.projitems*{7cd2cfdf-9996-461e-bc43-0530aae73496}*SharedItemsImports = 5
+		src\View.Uno.Sample\View.Uno.Sample.Shared\View.Uno.Sample.Shared.projitems*{a88ed13d-4eb2-44c8-b876-1ad35ec1e502}*SharedItemsImports = 4
+		src\View.Uno.Shared\Shared.projitems*{ead97829-803e-4a38-ac6e-90e9a6100715}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

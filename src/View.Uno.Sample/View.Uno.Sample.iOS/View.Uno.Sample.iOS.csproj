@@ -172,7 +172,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\src\View.Uno\View.Uno.csproj">
+    <ProjectReference Include="..\..\View.Uno\View.Uno.csproj">
       <Project>{58d94e26-9a4a-45ad-9f5e-2fcb9b2f0eae}</Project>
       <Name>View.Uno</Name>
     </ProjectReference>
