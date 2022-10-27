@@ -4,45 +4,27 @@
 	  xmlns:local="using:View.Uno.Sample"
 	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	  xmlns:u="using:Nventive.View.Controls"
+	  xmlns:nvc="using:Nventive.View.Controls"
 	  xmlns:toolkit="using:Uno.UI.Toolkit"
 	  mc:Ignorable="d"
 	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 	<Grid toolkit:VisibleBoundsPadding.PaddingMask="Top,Bottom">
-
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<toolkit:ElevatedView Elevation="4"
-							  Background="Gray"
-							  ShadowColor="Black"
-							  Height="44">
-			<Grid x:Name="CommandBar"
-				  Background="LightBlue">
-				<TextBlock Text="Play Ground"
-						   Padding="16"
-						   VerticalAlignment="Center"
-						   FontWeight="Bold"
-						   FontSize="16" />
-			</Grid>
-		</toolkit:ElevatedView>
+		<CommandBar Grid.Row="0"
+					Content="Playground" />
 
 		<ScrollViewer Grid.Row="1">
-			<StackPanel Margin="16">
-				<TextBlock Text="Controls"
-						   FontSize="16" />
+			<StackPanel Margin="16"
+						Spacing="16">
 
-				<Rectangle Height="1"
-						   Fill="LightGray"
-						   Margin="0,0,0,16" />
+				<!-- Playground.  -->
 
-				<!-- PlayGround  -->
-				
 			</StackPanel>
 		</ScrollViewer>
-		
 	</Grid>
 </Page>
