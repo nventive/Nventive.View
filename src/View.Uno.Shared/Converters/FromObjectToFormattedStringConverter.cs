@@ -83,7 +83,7 @@ namespace Nventive.View.Converters
 				return NullValue;
 			}
 
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS10_0_18362_0
+#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINUI
 			culture = CultureOverride.HasValue() ? CultureOverride : culture;
 			var currentCulture = string.IsNullOrWhiteSpace(culture) ? CultureInfo.CurrentUICulture : new CultureInfo(culture);
 #else

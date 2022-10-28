@@ -1,4 +1,4 @@
-﻿#if WINDOWS10_0_18362_0
+﻿#if WINDOWS
 using System;
 using System.Net;
 using System.Windows;

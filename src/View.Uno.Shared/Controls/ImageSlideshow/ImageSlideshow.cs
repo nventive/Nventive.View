@@ -1,11 +1,11 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS10_0_18362_0
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || MACOS || __WASM__ || WINDOWS_WINUI
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Uno.Extensions;
 using Uno.Extensions.Specialized;
-#if WINDOWS10_0_18362_0
+#if WINUI
 using Microsoft.UI.Dispatching;
 #else
 using Windows.UI.Core;
@@ -255,7 +255,7 @@ namespace Nventive.View.Controls
 				moveToNextDelay = TimeSpan.FromMilliseconds(DisplayTime);
 			}
 
-#if WINDOWS10_0_18362_0
+#if WINUI
 			DispatcherQueue dispatcher = DispatcherQueue;
 			DispatcherQueuePriority priority = DispatcherQueuePriority.Normal;
 #else
@@ -318,7 +318,7 @@ namespace Nventive.View.Controls
 				}
 				else
 				{
-#if WINDOWS10_0_18362_0
+#if WINUI
 					DispatcherQueue dispatcher = DispatcherQueue;
 					DispatcherQueuePriority priority = DispatcherQueuePriority.Normal;
 #else
@@ -351,7 +351,7 @@ namespace Nventive.View.Controls
 				{
 					_isSelectedIndexSynchronized = true;
 
-#if WINDOWS10_0_18362_0
+#if WINUI
 					DispatcherQueue dispatcher = DispatcherQueue;
 					DispatcherQueuePriority priority = DispatcherQueuePriority.Normal;
 #else

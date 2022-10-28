@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP
+﻿#if WINDOWS_UWP || WINDOWS_WINUI
 // TODO: Add SnapPanel to Windows .NET 6 https://github.com/nventive/Nventive.View/issues/49
 using System;
 using System.Collections.Generic;
@@ -6,13 +6,20 @@ using System.Linq;
 using System.Text;
 using Uno.Extensions;
 using Windows.Foundation;
+
+#if WINDOWS_UWP
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+#else
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+#endif
 
 namespace Nventive.View.Controls
 {
-	public class SnapPanel : Panel, IScrollSnapPointsInfo
+	public partial class SnapPanel : Panel, IScrollSnapPointsInfo
 	{
 		// This panel needs to set its second child as big as the outer ScrollViewer, which
 		// can't report to us its size until being measured. Catch 22! The trick is to first report

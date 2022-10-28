@@ -50,7 +50,7 @@ namespace Nventive.View.Controls
 			double starTotal = 0;
 
 			var children = Children
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !WINDOWS10_0_18362_0 // Useless operator (==overhead on UI thread) for Jupiter platform
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !WINUI // Useless operator (==overhead on UI thread) for Jupiter platform
 				.Cast<UIElement>()
 #endif
 				.OrderBy(GetPriority)

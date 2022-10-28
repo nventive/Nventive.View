@@ -1,0 +1,6 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="ms-appx:///Nventive.View.Uno.WinUI/Themes/MergedResourceDictionaries.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

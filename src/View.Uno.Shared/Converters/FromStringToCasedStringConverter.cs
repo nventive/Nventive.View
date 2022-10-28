@@ -59,7 +59,7 @@ namespace Nventive.View.Converters
 				return value;
 			}
 
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINDOWS10_0_18362_0
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
 			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
 			return this.CasingType == Converters.CasingType.LowerCase ?
 				text.ToLower(cultureInfo) : 

@@ -1,20 +1,18 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+
+#if WINUI
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
+using LaunchActivatedEventArgs = Microsoft.UI.Xaml.LaunchActivatedEventArgs;
+#else
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+#endif
 
 namespace View.Uno.Sample
 {
@@ -48,15 +46,15 @@ namespace View.Uno.Sample
 		protected override void OnLaunched(LaunchActivatedEventArgs args)
 		{
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                // this.DebugSettings.EnableFrameRateCounter = true;
-            }
+			if (System.Diagnostics.Debugger.IsAttached)
+			{
+				// this.DebugSettings.EnableFrameRateCounter = true;
+			}
 #endif
 
-#if NET5_0 && WINDOWS
-            _window = new Window();
-            _window.Activate();
+#if WINUI
+			_window = new Window();
+			_window.Activate();
 #else
 			_window = Windows.UI.Xaml.Window.Current;
 #endif
@@ -72,16 +70,23 @@ namespace View.Uno.Sample
 
 				rootFrame.NavigationFailed += OnNavigationFailed;
 
+#if !WINUI
 				if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
 				{
 					// TODO: Load state from previously suspended application
 				}
+#else
+				if (args.UWPLaunchActivatedEventArgs.PreviousExecutionState == ApplicationExecutionState.Terminated)
+				{
+					// TODO: Load state from previously suspended application
+				}
+#endif
 
 				// Place the frame in the current Window
 				_window.Content = rootFrame;
 			}
 
-#if !(NET5_0 && WINDOWS)
+#if !WINUI
 			if (args.PrelaunchActivated == false)
 #endif
 			{
@@ -122,18 +127,16 @@ namespace View.Uno.Sample
 		}
 
 		/// <summary>
-		/// Configures global Uno Platform logging
+		/// Configures global Uno Platform logging.
 		/// </summary>
 		private static void InitializeLogging()
 		{
 			var factory = LoggerFactory.Create(builder =>
 			{
-#if __WASM__
-                builder.AddProvider(new global::Uno.Extensions.Logging.WebAssembly.WebAssemblyConsoleLoggerProvider());
-#elif __IOS__
-                builder.AddProvider(new global::Uno.Extensions.Logging.OSLogLoggerProvider());
+#if __IOS__
+				builder.AddProvider(new global::Uno.Extensions.Logging.OSLogLoggerProvider());
 #elif WINDOWS_UWP
-                builder.AddDebug();
+				builder.AddDebug();
 #else
 				builder.AddConsole();
 #endif

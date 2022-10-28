@@ -1,4 +1,4 @@
-﻿#if WINDOWS10_0_18362_0
+﻿#if WINDOWS
 using System;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;

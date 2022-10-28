@@ -1,5 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || WINDOWS10_0_18362_0
-using System;
+﻿using System;
 using System.Windows.Input;
 using Uno.Logging;
 #if WINUI
@@ -340,4 +339,3 @@ namespace Nventive.View.Extensions
 #endif
 	}
 }
-#endif

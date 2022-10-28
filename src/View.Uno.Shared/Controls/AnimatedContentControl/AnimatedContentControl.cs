@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS10_0_18362_0
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_WINUI
 using System;
 using System.Collections.Generic;
 using System.Text;

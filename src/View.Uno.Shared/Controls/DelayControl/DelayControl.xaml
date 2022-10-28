@@ -7,9 +7,7 @@
 					xmlns:android="http://uno.ui/android"
 					xmlns:ios="http://uno.ui/ios"
 					xmlns:u="using:Nventive.View.Controls"
-					xmlns:uloc="http://nventive.com/localization/1.0"
-					xmlns:ub="using:Nventive.View.Extensions"
-					mc:Ignorable="d xamarin android ios uloc">
+					mc:Ignorable="d xamarin android ios">
 
 	<!-- This one is for things that should be visible by default. It has a fade in animation. -->
 	<Style x:Key="DefaultDelayControlStyle"

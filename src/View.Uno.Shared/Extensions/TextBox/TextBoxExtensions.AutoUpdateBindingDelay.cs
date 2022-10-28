@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
 using System;
 using System.Collections.Generic;
 using System.Reactive.Concurrency;
@@ -101,12 +101,7 @@ namespace Nventive.View.Extensions
 
 			if (binding != null)
 			{
-#if WINDOWS_UWP
 				binding.UpdateSource();
-#else
-				// Uno does not support the parameterless version
-				binding.UpdateSource(textBox.Text);
-#endif
 			}
 		}
 	}

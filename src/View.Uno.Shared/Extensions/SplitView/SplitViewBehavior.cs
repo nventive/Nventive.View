@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS10_0_18362_0
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
 using Uno.Extensions;
 #if WINUI
 using Microsoft.UI.Xaml;
@@ -13,7 +13,7 @@ using Uno.Logging;
 using System.Reactive.Linq;
 #if WINDOWS_UWP
 using IFrameworkElement = Windows.UI.Xaml.FrameworkElement;
-#elif WINDOWS10_0_18362_0
+#elif WINDOWS
 using IFrameworkElement = Microsoft.UI.Xaml.FrameworkElement;
 #elif __IOS__
 using UIKit;

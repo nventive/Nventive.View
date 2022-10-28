@@ -71,7 +71,7 @@ namespace Nventive.View.Converters
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "CA is wrong here")]
 		private static string FormatString(PrettyDateMode mode, CultureInfo culture, int? years = null, int? weeks = null, int? days = null, int? hours = null, int? minutes = null, int? seconds = null)
 		{
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINDOWS10_0_18362_0
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
 			using (culture == null ? null : new CultureContext(culture))
 			{
 #endif
@@ -121,7 +121,7 @@ namespace Nventive.View.Converters
 					case PrettyDateMode.Neutral:
 						return result;
 					case PrettyDateMode.Past:
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINDOWS10_0_18362_0
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
 						return String.Format(culture, PrettyDateFormatterStrings.CompleteDateFormat, result);
 #else
 					return String.Format(PrettyDateFormatterStrings.CompleteDateFormat, result);
@@ -129,14 +129,14 @@ namespace Nventive.View.Converters
 					default:
 						throw new ArgumentException("Invalid mode", "mode");
 				}
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINDOWS10_0_18362_0
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
 			}
 #endif
 		}
 
 		private static string GetPart(CultureInfo culture, int value, string singular, string plural)
 		{
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__WASM__ && !WINDOWS10_0_18362_0
+#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__WASM__ && !WINUI
 			return String.Format(culture, value > 1 ? plural : singular, value);
 #else
 			return String.Format(value > 1 ? plural : singular, value);

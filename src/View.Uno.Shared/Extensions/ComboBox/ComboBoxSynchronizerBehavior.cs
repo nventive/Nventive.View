@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS10_0_18362_0
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
 using System.Collections;
 using System.ComponentModel;
 using System;
@@ -18,7 +18,7 @@ using SharedBinding = Windows.UI.Xaml.Data.Binding;
 #if !WINUI && (__ANDROID__ || __IOS__ || __WASM__)
 using static Windows.UI.Xaml.DependencyObjectStore;
 #endif
-#if WINUI && !WINDOWS10_0_18362_0
+#if WINUI && !WINDOWS
 using static Microsoft.UI.Xaml.DependencyObjectStore;
 #endif
 
