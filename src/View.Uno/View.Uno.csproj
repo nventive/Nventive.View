@@ -32,7 +32,7 @@
 		<PackageReference Include="Uno.UI" Version="4.0.7" />
 		<PackageReference Include="Uno.Core" Version="4.0.1" />
 		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.7" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.1" />
 		<PackageReference Include="System.Reactive" Version="4.4.1" />
 		<PackageReference Include="Uno.XamlMerge.Task">
 			<Version>$(_Uno_XamlMerge_Task_Version)</Version>
@@ -41,7 +41,7 @@
 
 	<ItemGroup>
 		<!-- Needed for Source Link support -->
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup>
