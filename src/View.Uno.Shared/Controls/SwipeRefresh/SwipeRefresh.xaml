@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:local="using:Nventive.View.Controls"
 					xmlns:win="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 					xmlns:xamarin="http://uno.ui/xamarin"
 					xmlns:ios="http://uno.ui/ios"
@@ -9,10 +8,10 @@
 					xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 					mc:Ignorable="ios android xamarin">
 
-	<win:Style TargetType="local:SwipeRefresh">
+	<win:Style TargetType="u:SwipeRefresh">
 		<Setter Property="Template">
 			<Setter.Value>
-				<ControlTemplate TargetType="local:SwipeRefresh">
+				<ControlTemplate TargetType="u:SwipeRefresh">
 					<ScrollViewer x:Name="PART_ScrollViewer"
 								  HorizontalScrollBarVisibility="Disabled"
 								  HorizontalScrollMode="Disabled"
@@ -67,12 +66,12 @@
 		</Setter>
 	</win:Style>
 
-	<android:Style TargetType="local:SwipeRefresh">
+	<android:Style TargetType="u:SwipeRefresh">
 		<Setter Property="Template">
 			<Setter.Value>
-				<ControlTemplate TargetType="local:SwipeRefresh">
+				<ControlTemplate TargetType="u:SwipeRefresh">
 					<Grid>
-						<local:NativeSwipeRefresh />
+						<u:NativeSwipeRefresh />
 					</Grid>
 				</ControlTemplate>
 			</Setter.Value>

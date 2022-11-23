@@ -48,7 +48,7 @@ namespace Nventive.View.Converters
 				return null;
 			}
 
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINDOWS10_0_18362_0
+#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
 			if (string.IsNullOrWhiteSpace(culture))
 			{
 				return _extensions.To(_extensions.Conversion(value), targetType);

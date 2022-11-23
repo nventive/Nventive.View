@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || WINDOWS10_0_18362_0
+﻿#if WINDOWS_UWP || WINUI
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

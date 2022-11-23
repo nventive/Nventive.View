@@ -54,7 +54,7 @@ namespace Nventive.View
 		{
 
 			IObservable<DependencyPropertyChanged<TValue>> observer = null;
-#if WINDOWS10_0_18362_0 || WINDOWS_UWP
+#if WINUI || WINDOWS_UWP
 			observer = Observable.Create<DependencyPropertyChanged<TValue>>(obs =>
 			{
 

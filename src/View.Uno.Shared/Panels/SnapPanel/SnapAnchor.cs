@@ -1,7 +1,5 @@
-﻿#if WINDOWS_UWP
+﻿#if WINDOWS_UWP || WINDOWS_WINUI
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Nventive.View.Controls
 {

@@ -1,11 +1,15 @@
-﻿#if WINDOWS_UWP
+﻿#if WINDOWS_UWP || WINDOWS_WINUI
 using System;
-using System.Collections.Generic;
-using System.Text;
-using Windows.UI.Xaml;
-using Windows.Foundation;
-using Windows.UI.Xaml.Controls;
 using NativeValue = System.Double;
+using Windows.Foundation;
+
+#if WINDOWS_UWP
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+#else
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+#endif
 
 namespace Nventive.View
 {

@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Uno;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Reactive.Concurrency;
 using System.Reactive.Disposables;
+using Uno;
+
 #if WINUI
 using Microsoft.UI.Xaml;
 #elif WINDOWS_UWP || __WASM__
@@ -183,6 +182,7 @@ namespace Nventive.View
 				}
 			}
 		}
+
 
 		internal static IObservable<EventPattern<RoutedEventArgs>> ObserveLoaded(this FrameworkElement element, UiEventSubscriptionsOptions options = UiEventSubscriptionsOptions.Default)
 		{
