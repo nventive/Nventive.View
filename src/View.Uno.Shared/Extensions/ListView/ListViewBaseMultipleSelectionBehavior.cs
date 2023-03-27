@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || WINDOWS
+﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || WINDOWS_WINUI
 using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics.CodeAnalysis;
