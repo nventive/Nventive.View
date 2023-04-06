@@ -258,16 +258,24 @@ namespace Nventive.View.Controls
 #if WINUI
 			DispatcherQueue dispatcher = DispatcherQueue;
 			DispatcherQueuePriority priority = DispatcherQueuePriority.Normal;
+
+			_ = dispatcher.EnqueueAsync(async () =>
+			{
+				await Task.Delay(moveToNextDelay);
+
+				SelectedIndex = newIndex;
+			}, priority);
 #else
 			CoreDispatcher dispatcher = Dispatcher;
 			CoreDispatcherPriority priority = CoreDispatcherPriority.Normal;
-#endif
-			_ = dispatcher.RunTaskAsync(priority, async () =>
+
+			_ = dispatcher.RunAsync(priority, async () =>
 			{
 				await Task.Delay(moveToNextDelay);
 
 				SelectedIndex = newIndex;
 			});
+#endif
 		}
 
 		private void OnAutoRotateChanged()
