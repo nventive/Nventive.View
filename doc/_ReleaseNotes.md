@@ -2,12 +2,17 @@
 
 ## Next Version 
 ### Features
+* Build with VS2022
+* Add support for uap10.0.19041
+* Add support for Android 12
 * Added new properties `OpenUriCommand`, `HyperlinkUnderlineStyle` and `HyperlinkDefaultFontWeight` in `HtmlTextBlockBehavior`.
 * Add support for Android 10
 * Add support for Android X
 * Update xamarin build download to 0.10.0 to add subdependencies bug fix
 * 
 ### Breaking changes 
+* Dropped support for uap10.0.18362
+* Dropped support for MonoAndroid10 target
 * updated CommonServiceLocator to 2.0.5
 * Dropped support for MonoAndroid80 target
 * Updated to Uno.UI 3.0+

@@ -171,58 +171,58 @@
   <data name="Metric_UnderOneKilometerString" xml:space="preserve">
     <value>{0:0.#} kilometer</value>
   </data>
-	<data name="Imperial_AboutOneMile_ShortString" xml:space="preserve">
+  <data name="Imperial_AboutOneMile_ShortString" xml:space="preserve">
     <value>about one mile</value>
   </data>
-	<data name="Imperial_Feet_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_Feet_ShortFormatString" xml:space="preserve">
     <value>{0:0} ft</value>
   </data>
-	<data name="Imperial_Here_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_Here_ShortFormatString" xml:space="preserve">
     <value>a few feet</value>
   </data>
-	<data name="Imperial_Miles_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_Miles_ShortFormatString" xml:space="preserve">
     <value>{0:0} mi</value>
   </data>
-	<data name="Imperial_NearFeet_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_NearFeet_ShortFormatString" xml:space="preserve">
     <value>{0:0.#} ft</value>
   </data>
-	<data name="Imperial_NearMiles_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_NearMiles_ShortFormatString" xml:space="preserve">
     <value>{0:0.#} mi</value>
   </data>
-	<data name="Imperial_OneFoot_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_OneFoot_ShortFormatString" xml:space="preserve">
     <value>{0:0} ft</value>
   </data>
-	<data name="Imperial_OneMile_ShortFormatString" xml:space="preserve">
+  <data name="Imperial_OneMile_ShortFormatString" xml:space="preserve">
     <value>{0:0} mi</value>
   </data>
-	<data name="Imperial_UnderOneMile_ShortString" xml:space="preserve">
+  <data name="Imperial_UnderOneMile_ShortString" xml:space="preserve">
     <value>{0:0.#} mi</value>
   </data>
-	<data name="Metric_AboutOneKilometer_ShortString" xml:space="preserve">
+  <data name="Metric_AboutOneKilometer_ShortString" xml:space="preserve">
     <value>about one kilometer</value>
   </data>
-	<data name="Metric_Here_ShortFormatString" xml:space="preserve">
+  <data name="Metric_Here_ShortFormatString" xml:space="preserve">
     <value>less than a meter</value>
   </data>
-	<data name="Metric_Kilometers_ShortFormatString" xml:space="preserve">
+  <data name="Metric_Kilometers_ShortFormatString" xml:space="preserve">
     <value>{0:0} km</value>
   </data>
-	<data name="Metric_Meters_ShortFormatString" xml:space="preserve">
+  <data name="Metric_Meters_ShortFormatString" xml:space="preserve">
     <value>{0:0} m</value>
   </data>
-	<data name="Metric_NearKilometers_ShortFormatString" xml:space="preserve">
+  <data name="Metric_NearKilometers_ShortFormatString" xml:space="preserve">
     <value>{0:0.#} km</value>
   </data>
-	<data name="Metric_NearMeters_ShortFormatString" xml:space="preserve">
+  <data name="Metric_NearMeters_ShortFormatString" xml:space="preserve">
     <value>{0:0.#} m</value>
   </data>
-	<data name="Metric_OneKilometer_ShortFormatString" xml:space="preserve">
+  <data name="Metric_OneKilometer_ShortFormatString" xml:space="preserve">
     <value>{0:0} km</value>
   </data>
-	<data name="Metric_OneMeter_ShortFormatString" xml:space="preserve">
+  <data name="Metric_OneMeter_ShortFormatString" xml:space="preserve">
     <value>{0:0} m</value>
   </data>
-	<data name="Metric_UnderOneKilometer_ShortString" xml:space="preserve">
+  <data name="Metric_UnderOneKilometer_ShortString" xml:space="preserve">
     <value>{0:0.#} km</value>
   </data>
 </root>

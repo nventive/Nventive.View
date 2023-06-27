@@ -17,7 +17,7 @@ namespace Nventive.View.Converters.PrettyDistanceConverter.Resources
 		{
 		}
 
-		internal static ResourceMap ResourceManager
+		internal static ResourceMap _resourceManager
 		{
 			get
 			{
@@ -139,7 +139,7 @@ namespace Nventive.View.Converters.PrettyDistanceConverter.Resources
 
 		internal static string GetResource([CallerMemberName] string callerMemberName = "")
 		{
-			return ResourceManager.GetValue(ResourcePrefix + callerMemberName).ValueAsString;
+			return _resourceManager.GetValue(ResourcePrefix + callerMemberName).ValueAsString;
 		}
 	}
 }

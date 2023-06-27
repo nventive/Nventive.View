@@ -1,4 +1,4 @@
-﻿#if __ANDROID__ || __IOS__
+﻿#if !WINUI && (__ANDROID__ || __IOS__)
 using System;
 using System.Collections.Generic;
 using System.Linq;

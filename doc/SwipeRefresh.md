@@ -104,4 +104,13 @@ By default, `IncludeInSwipeRefresh` is set to `True`. Setting it to `False` will
 
 ## Known issues
 
-None.
+On Android, bindings on the DataContext on the first child of the SwipeRefresh will be ignored, such as:
+
+```xml
+<u:SwipeRefresh>
+	<!--This binding is ignored-->
+	<Grid DataContext="{Binding MyString}">
+	...
+	</Grid>
+</u:SwipeRefresh>
+```
