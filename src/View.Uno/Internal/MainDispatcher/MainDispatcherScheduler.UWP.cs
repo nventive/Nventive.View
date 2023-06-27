@@ -1,8 +1,6 @@
 ﻿#if WINDOWS_UWP
 using System;
-using System.Collections.Generic;
 using System.Reactive.Concurrency;
-using System.Text;
 using Windows.UI.Core;
 
 namespace Nventive.View

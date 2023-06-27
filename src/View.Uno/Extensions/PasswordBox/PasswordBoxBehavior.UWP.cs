@@ -17,7 +17,7 @@ namespace Nventive.View.Extensions
 {
 	public partial class PasswordBoxBehavior : DependencyObject
 	{
-		#region Attached property: NextControl
+#region Attached property: NextControl
 		public static Control GetNextControl(PasswordBox obj)
 		{
 			return obj.GetValue(NextControlProperty) as Control;
@@ -42,9 +42,9 @@ namespace Nventive.View.Extensions
 
 			GetOrCreateBehavior(passwordBox);
 		}
-		#endregion
+#endregion
 
-		#region Attached property: Password
+#region Attached property: Password
 
 		public static readonly DependencyProperty PasswordProperty =
 			DependencyProperty.RegisterAttached("Password", typeof(string), typeof(PasswordBoxBehavior), new PropertyMetadata(default(string), OnPasswordChanged));
@@ -69,9 +69,9 @@ namespace Nventive.View.Extensions
 			textBox.SetValue(PasswordProperty, value);
 		}
 
-		#endregion
+#endregion
 
-		#region Attached property: AutoUpdateBindingDelay
+#region Attached property: AutoUpdateBindingDelay
 
 		public static TimeSpan GetAutoUpdateBindingDelay(PasswordBox obj)
 		{
@@ -104,9 +104,9 @@ namespace Nventive.View.Extensions
 			}
 		}
 
-		#endregion
+#endregion
 
-		#region Attached property: IsAutoLostFocusEnabled
+#region Attached property: IsAutoLostFocusEnabled
 
 		public static bool GetIsAutoLostFocusEnabled(PasswordBox obj)
 		{
@@ -132,9 +132,9 @@ namespace Nventive.View.Extensions
 			GetOrCreateBehavior(textBox);
 		}
 
-		#endregion
+#endregion
 
-		#region Attached property: IsClearOnSubmitEnabled
+#region Attached property: IsClearOnSubmitEnabled
 
 		public static bool GetIsClearOnSubmitEnabled(PasswordBox obj)
 		{
@@ -160,9 +160,9 @@ namespace Nventive.View.Extensions
 			GetOrCreateBehavior(textBox);
 		}
 
-		#endregion
+#endregion
 
-		#region Attached property: Behavior (private)
+#region Attached property: Behavior (private)
 
 		private static PasswordBoxBehavior GetOrCreateBehavior(PasswordBox obj)
 		{
@@ -193,7 +193,7 @@ namespace Nventive.View.Extensions
 		private static readonly DependencyProperty BehaviorProperty =
 			DependencyProperty.RegisterAttached("Behavior", typeof(PasswordBoxBehavior), typeof(PasswordBoxBehavior), new PropertyMetadata(null));
 
-		#endregion
+#endregion
 
 		private IDisposable Attach()
 		{

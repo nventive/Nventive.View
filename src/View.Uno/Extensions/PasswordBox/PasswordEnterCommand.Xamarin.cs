@@ -6,12 +6,7 @@ using Microsoft.Extensions.Logging;
 using Uno.Extensions;
 using System.Reactive.Linq;
 using System.Reactive.Concurrency;
-#if __ANDROID__ || __IOS__
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Input;
-using Windows.System;
-#elif IS_UNIT_TESTS
+#if IS_UNIT_TESTS
 using Windows.UI.Xaml.Input;
 using System.Windows.Controls;
 using System.Windows;

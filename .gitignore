@@ -52,7 +52,6 @@ BenchmarkDotNet.Artifacts/
 project.lock.json
 project.fragment.lock.json
 artifacts/
-**/Properties/launchSettings.json
 
 # StyleCop
 StyleCopReport.xml
@@ -169,7 +168,6 @@ publish/
 *.azurePubxml
 # Note: Comment the next line if you want to checkin your web deploy settings,
 # but database connection strings (with potential passwords) will be unencrypted
-*.pubxml
 *.publishproj
 
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
@@ -329,3 +327,9 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+
+# Ignore generated style file
+src/View.Uno/Themes/MergedResourceDictionaries.xaml
+src/View.Uno/Generated/
+src/View.Uno.WinUI/Themes/MergedResourceDictionaries.xaml
+src/View.Uno.WinUI/Generated/

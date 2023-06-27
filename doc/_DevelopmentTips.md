@@ -9,9 +9,9 @@ This means that each project is compiled to generate one assembly per target.
 The available targets are:
 - Windows (UWP)
 - iOS
-- Android 8.0
-- Android 9.0
-- Net461
+- Android 11.0
+- Android 12.0
+- net472
 - WebAssembly (WASM)
 
 Compiling all targets can take some time.

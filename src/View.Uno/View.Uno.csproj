@@ -1,8 +1,8 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
-  <PropertyGroup>
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+	<PropertyGroup>
 		<!-- Change the TargetFrameworks depending on which platform you are building on. This avoids errors as it is impossible to build UAP on OSX (MacOS) -->
 		<TargetFrameworks Condition="'$([MSBuild]::IsOsPlatform(OSX))'">netstandard2.0;xamarinios10;</TargetFrameworks>
-		<TargetFrameworks Condition="'!$([MSBuild]::IsOsPlatform(OSX))'">netstandard2.0;xamarinios10;monoandroid10.0;monoandroid11.0;uap10.0.18362</TargetFrameworks>
+		<TargetFrameworks Condition="'!$([MSBuild]::IsOsPlatform(OSX))'">netstandard2.0;xamarinios10;monoandroid11.0;monoandroid12.0;uap10.0.19041</TargetFrameworks>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<RootNamespace>Nventive.View</RootNamespace>
@@ -12,17 +12,41 @@
 		<PackageId>Nventive.View.Uno</PackageId>
 		<Description>Nventive.View.Uno</Description>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-  </PropertyGroup>
+		<PackageTags>view;mvvm;xamarin;ios;android;uwp;</PackageTags>
+		<_Uno_XamlMerge_Task_Version>1.1.0-dev.13</_Uno_XamlMerge_Task_Version>
+		<XamlMergeOutputFile>$(MSBuildProjectDirectory)\Themes\MergedResourceDictionaries.xaml</XamlMergeOutputFile>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
-  </PropertyGroup>
+		<!-- Needed for Source Link support -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Uno.UI" Version="3.0.11" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.0" />
+	<PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Uno.SourceGenerationTasks" Version="4.1.0" />
+		<PackageReference Include="Uno.UI" Version="4.0.7" />
+		<PackageReference Include="Uno.Core" Version="4.0.1" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.1" />
 		<PackageReference Include="System.Reactive" Version="4.4.1" />
-  </ItemGroup>
+		<PackageReference Include="Uno.XamlMerge.Task">
+			<Version>$(_Uno_XamlMerge_Task_Version)</Version>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Needed for Source Link support -->
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<XamlMergeInput Include="..\View.Uno.Shared\Controls\**\*.xaml" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="System.Xml" />
@@ -30,7 +54,7 @@
 	</ItemGroup>
 
 	<!-- UWP -->
-	<ItemGroup Condition="'$(TargetFramework)' == 'uap10.0.18362'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'uap10.0.19041'">
 		<!-- Include all .XAML files. -->
 		<Page Include="Controls\**\*.xaml">
 			<Pack>True</Pack>
@@ -52,13 +76,13 @@
 
 		<PRIResource Include="**\*.resw" />
 
-		<SDKReference Include="WindowsMobile, Version=10.0.18362.0">
+		<SDKReference Include="WindowsMobile, Version=10.0.19041.0">
 			<Name>Microsoft Mobile Extension SDK for Universal App Platform</Name>
 		</SDKReference>
 	</ItemGroup>
 
 	<!-- Uno -->
-	<ItemGroup Condition="'$(TargetFramework)' == 'xamarinios10' or '$(TargetFramework)' == 'MonoAndroid10.0' or '$(TargetFramework)' == 'MonoAndroid11.0'">
+	<ItemGroup Condition="'$(TargetFramework)' == 'xamarinios10' or '$(TargetFramework)' == 'MonoAndroid11.0' or '$(TargetFramework)' == 'MonoAndroid12.0'">
 		<!-- Include all .XAML files. -->
 		<Page Include="Controls\**\*.xaml" />
 
@@ -67,24 +91,18 @@
 		<None Include="**\*.UWP.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Compile Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	  </Compile>
-	  <Compile Update="Converters\PrettyDistanceConverter\Resources\DistanceHelperStrings.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	  </Compile>
-	  <Compile Update="Panels\SnapPanel\SnapAnchor.cs">
-	    <Generator>MSBuild:Compile</Generator>
-	  </Compile>
-	  <Compile Update="Panels\SnapPanel\SnapPanel.cs">
-	    <Generator>MSBuild:Compile</Generator>
-	  </Compile>
-	  <Compile Update="Panels\SnapPanel\SnapPoint.cs">
-	    <Generator>MSBuild:Compile</Generator>
-	  </Compile>
-	  <Compile Update="Panels\SnapPanel\SnapPointInfo.cs">
-	    <Generator>MSBuild:Compile</Generator>
-	  </Compile>
+		<Compile Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.Designer.cs">
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.Designer.cs">
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Update="Converters\PrettyDistanceConverter\Resources\DistanceHelperStrings.Designer.cs">
+			<DesignTime>True</DesignTime>
+		</Compile>
+		<Compile Update="Converters\PrettyDistanceConverter\Resources\DistanceHelperStrings.Designer.cs">
+			<DesignTime>True</DesignTime>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -94,6 +112,10 @@
 		</EmbeddedResource>
 		<EmbeddedResource Update="Converters\PrettyDistanceConverter\Resources\DistanceHelperStrings.resx">
 			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>DistanceHelperStrings.Designer.cs</LastGenOutput>
 		</EmbeddedResource>
 	</ItemGroup>
+
+	<Import Project="$(NuGetPackageRoot)uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
+	<Import Project="..\View.Uno.Shared\Shared.projitems" Label="Shared" />
 </Project>
