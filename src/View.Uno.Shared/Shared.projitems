@@ -89,6 +89,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\HtmlTextBlockBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\HtmlTextBlockBehavior.Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\TextBlockBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\FormattingTextBoxBehavior.Android.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\FormattingTextBoxBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\FormattingTextBoxBehavior.iOS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\InputAccessoryViewBehavior.iOS.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\TextBoxBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBox\TextBoxExtensions.AutoUpdateBindingDelay.cs" />
