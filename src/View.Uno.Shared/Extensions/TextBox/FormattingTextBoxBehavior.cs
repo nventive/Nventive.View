@@ -1,5 +1,4 @@
-﻿#if NETFX_CORE || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_UWP
-using System;
+﻿using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Reactive.Concurrency;
@@ -487,4 +486,3 @@ namespace Nventive.View.Extensions
 		}
 	}
 }
-#endif
