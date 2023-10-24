@@ -12,6 +12,8 @@ using Microsoft.UI.Xaml.Media;
 using Uno.Disposables;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using Microsoft.UI.Dispatching;
+using Windows.UI.Core;
 
 namespace Nventive.View.Extensions
 {
@@ -206,6 +208,7 @@ namespace Nventive.View.Extensions
 				Scheduler.Immediate)
 				.Select(args => args.EventArgs)
 				.Where(args => args != null && (args.Key == Windows.System.VirtualKey.Enter))
+				.ObserveOn(GetScheduler())
 				.Subscribe(
 					args =>
 					{
@@ -221,13 +224,26 @@ namespace Nventive.View.Extensions
 					h => AssociatedObject.PasswordChanged += h,
 					h => AssociatedObject.PasswordChanged -= h,
 					Scheduler.Immediate)
-				.Throttle(AutoUpdateBindingDelay, (IScheduler)System.Threading.SynchronizationContext.Current)
+				.Throttle(AutoUpdateBindingDelay, GetScheduler())
+				.ObserveOn(GetScheduler())
 				.Subscribe(
 					_ => UpdateBinding(),
 					ex => this.Log().Error("Exception", ex))
 				.DisposeWith(subscriptions);
 
 			return subscriptions;
+		}
+
+		private IScheduler GetScheduler()
+		{
+			if (System.Threading.SynchronizationContext.Current is IScheduler scheduler)
+			{
+				return scheduler;
+			}
+
+			return new MainDispatcherScheduler(
+				DispatcherQueue.GetForCurrentThread(),
+				DispatcherQueuePriority.Normal);
 		}
 
 		private void UpdateBinding()
