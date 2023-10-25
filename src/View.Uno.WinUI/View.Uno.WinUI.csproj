@@ -75,8 +75,37 @@
 		<_AndroidApiLevel>31</_AndroidApiLevel>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);__WASM__;__NETSTANDARD__</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+	  <DefineConstants>$(DefineConstants);__WASM__;__NETSTANDARD__</DefineConstants>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PRIResource Remove="Converters\PrettyDateConverter\Resources\**\PrettyDateFormatterStrings.resw" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="Converters\PrettyDateConverter\Resources\**\PrettyDateFormatterStrings.resw" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.Designer.cs">
+	    <DependentUpon>$([MSBuild]::ValueOrDefault('%(Filename)', '').Replace('$(ExtrasDefaultDesignerFileSuffix)', '.resx'))</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.*.resx">
+	    <_SdkHasLangId>$([System.Text.RegularExpressions.Regex]::IsMatch('%(FileName)', '$(_SdkLangIdRegEx)'))</_SdkHasLangId>
+	    <DependentUpon>$([System.Text.RegularExpressions.Regex]::Replace('%(FileName)', '$(_SdkLangIdRegEx)', '%(Extension)'))</DependentUpon>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<Import Project="..\View.Uno.Shared\Shared.projitems" Label="Shared" />
