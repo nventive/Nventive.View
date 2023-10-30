@@ -108,6 +108,7 @@
 	  </EmbeddedResource>
 	</ItemGroup>
 
+	<Import Project="winappsdk-workaround.targets" />
 	<Import Project="..\View.Uno.Shared\Shared.projitems" Label="Shared" />
 	<Import Project="$(NuGetPackageRoot)uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
 </Project>
