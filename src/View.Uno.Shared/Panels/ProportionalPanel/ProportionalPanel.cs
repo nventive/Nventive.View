@@ -1,4 +1,4 @@
-﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_UWP
+﻿#if __ANDROID__ || __IOS__ || __WASM__
 using Windows.Foundation;
 #if WINUI
 using Microsoft.UI.Xaml;

@@ -11,7 +11,7 @@ using _DependencyObject = Microsoft.UI.Xaml.DependencyObject;
 using _FrameworkElement = Microsoft.UI.Xaml.FrameworkElement;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Controls;
-#elif __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_UWP
+#elif __ANDROID__ || __IOS__ || __WASM__
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Controls;
@@ -54,7 +54,7 @@ namespace Nventive.View
 		{
 
 			IObservable<DependencyPropertyChanged<TValue>> observer = null;
-#if WINUI || WINDOWS_UWP
+#if WINUI
 			observer = Observable.Create<DependencyPropertyChanged<TValue>>(obs =>
 			{
 

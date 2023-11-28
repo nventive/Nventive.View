@@ -6,7 +6,7 @@ using Uno.Logging;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using GenericCulture = System.String;
-#elif WINDOWS_UWP || __WASM__
+#elif __WASM__
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml;
 using GenericCulture = System.String;

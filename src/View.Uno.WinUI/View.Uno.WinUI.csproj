@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-windows10.0.22621.0;net7.0-android;net7.0-ios;</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>net7.0-windows10.0.19041;net7.0-ios;net7.0-android;net7.0-macos;net7.0-maccatalyst;</TargetFrameworks>
+		<LangVersion>11.0</LangVersion>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<RootNamespace>Nventive.View</RootNamespace>
@@ -29,11 +29,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.WinUI" Version="5.0.31" />
+		<PackageReference Include="Uno.WinUI" Version="5.0.19" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.19" />
 		<PackageReference Include="Uno.Core" Version="4.0.1" />
-		<PackageReference Include="Uno.SourceGenerationTasks" Version="4.2.0" />
+		<PackageReference Include="Uno.SourceGenerationTasks" Version="4.1.0" />
 		<PackageReference Include="System.Reactive" Version="4.4.1" />
-		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.31" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
 		<PackageReference Include="Uno.XamlMerge.Task">
 			<Version>$(_Uno_XamlMerge_Task_Version)</Version>
@@ -54,31 +54,18 @@
 		<DefineConstants>$(DefineConstants);WINDOWS_WINUI</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.22621'">
+	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.19041'">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.3" />
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22000.24" />
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22000.24" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'!='net7.0-windows10.0.22621'">
+	<ItemGroup Condition="'$(TargetFramework)'!='net7.0-windows10.0.19041'">
 		<Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 		<Compile Update="**\*.xaml.cs">
 			<DependentUpon>%(Filename)</DependentUpon>
 		</Compile>
 	</ItemGroup>
-
-	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0-android'">
-		<!-- Workaround: https://github.com/unoplatform/uno/issues/9723 -->
-		<_AndroidApiLevel>31</_AndroidApiLevel>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|AnyCPU'">
-		<DefineConstants>$(DefineConstants);__WASM__;</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|AnyCPU'">
-		<DefineConstants>$(DefineConstants);__WASM__;</DefineConstants>
-	</PropertyGroup>
 
 	<ItemGroup>
 		<UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />

@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || WINDOWS
+﻿#if __ANDROID__ || __IOS__ || __MACOS__ || WINDOWS
 using System;
 using System.Windows.Input;
 using Uno.Logging;

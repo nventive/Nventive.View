@@ -8,10 +8,6 @@ using Uno.Extensions;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml;
 using GenericCulture = System.String;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml;
-using GenericCulture = System.String;
 #elif __ANDROID__ || __IOS__ || __WASM__
 using GenericCulture = System.Globalization.CultureInfo;
 using Windows.UI.Xaml.Data;

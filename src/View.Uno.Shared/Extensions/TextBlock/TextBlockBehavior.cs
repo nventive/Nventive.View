@@ -7,9 +7,6 @@ using System.Collections.Generic;
 #if WINUI
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 #else
 using System.Windows;
 using System.Windows.Controls;

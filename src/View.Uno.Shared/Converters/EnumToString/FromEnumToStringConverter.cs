@@ -5,10 +5,6 @@ using System.Text;
 #if WINUI
 using Microsoft.UI.Xaml.Data;
 using GenericCulture = System.String;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml;
-using GenericCulture = System.String;
 #elif __ANDROID__ || __IOS__ || __WASM__
 using Uno.UI;
 using GenericCulture = System.String;
@@ -60,7 +56,7 @@ namespace Nventive.View.Converters
 			switch (this.CharacterCasing)
 			{
 				case CharacterCasingOption.UpperCase:
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
+#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
 					output = output.ToUpper();
 #else
 					output = output.ToUpper(culture);
@@ -68,7 +64,7 @@ namespace Nventive.View.Converters
 					break;
 
 				case CharacterCasingOption.LowerCase:
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
+#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
 					output = output.ToLower();
 #else
 					output = output.ToLower(culture);

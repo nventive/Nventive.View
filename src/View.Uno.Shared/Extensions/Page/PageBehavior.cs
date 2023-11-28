@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__
+﻿#if __ANDROID__ || __IOS__
 using System;
 using System.Collections.Generic;
 using System.Text;

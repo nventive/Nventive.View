@@ -6,8 +6,6 @@ using System.Linq;
 using System.Text;
 #if WINUI
 using Microsoft.UI.Xaml;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml;
 #elif __ANDROID__ || __IOS__ || __WASM__
 using Visibility = Windows.UI.Xaml.Visibility;
 #else
