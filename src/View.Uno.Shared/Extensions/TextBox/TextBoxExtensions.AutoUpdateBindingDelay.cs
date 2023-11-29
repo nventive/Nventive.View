@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
+﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
 using System;
 using System.Collections.Generic;
 using System.Reactive.Concurrency;

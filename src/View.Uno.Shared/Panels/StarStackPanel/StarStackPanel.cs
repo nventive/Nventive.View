@@ -9,7 +9,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml;
 using Windows.Foundation;
 using UIElement = Microsoft.UI.Xaml.UIElement;
-#elif WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__
+#elif __ANDROID__ || __IOS__ || __WASM__
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.Foundation;
@@ -50,7 +50,7 @@ namespace Nventive.View.Controls
 			double starTotal = 0;
 
 			var children = Children
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !WINUI // Useless operator (==overhead on UI thread) for Jupiter platform
+#if !__ANDROID__ && !__IOS__ && !WINUI // Useless operator (==overhead on UI thread) for Jupiter platform
 				.Cast<UIElement>()
 #endif
 				.OrderBy(GetPriority)
@@ -531,11 +531,7 @@ namespace Nventive.View.Controls
 		private static readonly Regex GridLengthParsingRegex =
 			new Regex(
 				@"^(?:(?<stars>\d*(?:.\d*))\*)|(?<abs>\d+(?:.\d*))|(?<auto>Auto)|(?<star>\*)$",
-#if WINDOWS_UWP
-				RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Singleline);
-#else
 				RegexOptions.IgnoreCase | RegexOptions.CultureInvariant | RegexOptions.Singleline | RegexOptions.Compiled);
-#endif
 
 		private static GridLength[] ParseGridLength(string s)
 		{

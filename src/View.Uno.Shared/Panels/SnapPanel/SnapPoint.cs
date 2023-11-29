@@ -1,10 +1,6 @@
-﻿#if WINDOWS_UWP || WINDOWS_WINUI
+﻿#if WINDOWS_WINUI
 
-#if WINDOWS_UWP
-using Windows.UI.Xaml;
-#else
 using Microsoft.UI.Xaml;
-#endif
 
 namespace Nventive.View.Controls
 {

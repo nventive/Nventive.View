@@ -8,7 +8,7 @@ using Uno.Extensions;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml;
 using GenericCulture = System.String;
-#elif WINDOWS_UWP || __WASM__
+#elif __WASM__
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml;
 using GenericCulture = System.String;
@@ -42,7 +42,7 @@ namespace Nventive.View.Converters
 				return string.Empty;
 			}
 
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
+#if !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
 			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
 #else
 			var cultureInfo = culture != null ? new CultureInfo(culture) : CultureInfo.CurrentCulture;

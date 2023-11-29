@@ -6,10 +6,6 @@ using System.Text;
 #if WINUI
 using Microsoft.UI.Xaml.Data;
 using GenericCulture = System.String;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml;
-using GenericCulture = System.String;
 #elif __ANDROID__ || __IOS__ || __WASM__
 using GenericCulture = System.String;
 using Windows.UI.Xaml.Data;
@@ -59,7 +55,7 @@ namespace Nventive.View.Converters
 				return value;
 			}
 
-#if !WINDOWS_UWP && !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
+#if !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
 			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
 			return this.CasingType == Converters.CasingType.LowerCase ?
 				text.ToLower(cultureInfo) : 

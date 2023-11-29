@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || MACOS || __WASM__ || WINDOWS_WINUI
+﻿#if __ANDROID__ || __IOS__ || MACOS || __WASM__ || WINDOWS_WINUI
 using System;
 using System.Collections;
 using System.Linq;

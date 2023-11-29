@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_WINUI
+﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_WINUI
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -190,27 +190,25 @@ namespace Nventive.View.Controls
 
 				if (_scrollViewer != null)
 				{
-					void onViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
-					{
-						AbsoluteOffset = _scrollViewer.VerticalOffset;
-					}
-
 					_scrollViewer.ViewChanged += onViewChanged;
 #if __ANDROID__ || __IOS__
-					RegisterLoadActions(loaded: () =>
-						{
-							_scrollViewer.ViewChanged -= onViewChanged;
-							_scrollViewer.ViewChanged += onViewChanged;
-							onViewChanged(_scrollViewer, null);
-						},
-						unloaded: () =>
-						{
-							_scrollViewer.ViewChanged -= onViewChanged;
-						}
-					);
+					Unloaded += (sender, param) => _scrollViewer.ViewChanged -= onViewChanged;
 #endif
 				}
 			}
+			else
+			{
+#if __ANDROID__ || __IOS__
+				_scrollViewer.ViewChanged -= onViewChanged;
+				_scrollViewer.ViewChanged += onViewChanged;
+				onViewChanged(_scrollViewer, null);
+#endif
+			}
+		}
+
+		private void onViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+		{
+			AbsoluteOffset = _scrollViewer.VerticalOffset;
 		}
 
 		private double GetMastheadEnd()
@@ -223,20 +221,11 @@ namespace Nventive.View.Controls
 			if (_mastheadElement != null && _scrollViewer != null)
 			{
 				// Find position of masthead relative to scrolling content
-#if WINDOWS_UWP
-				// On UWP we can count on finding a ScrollContentPresenter. 
-				var scp = _scrollViewer.FindFirstChild<ScrollContentPresenter>();
-				var content = scp?.Content as FrameworkElement;
-				var transform = _mastheadElement.TransformToVisual(content);
-				var mastheadElementStart = transform.TransformPoint(new Point(0, 0)).Y + content.Margin.Top;
-				MastheadEnd = mastheadElementStart + _mastheadElement.ActualHeight;
-#else
-				// In Uno we can count on the VerticalOffset being 'in sync' with what TransformToVisual reports. (On UWP this isn't the 
-				// case, maybe because of background composition.)
+				// In Uno we can count on the VerticalOffset being 'in sync' with what TransformToVisual reports.
+				// (On UWP this isn't the case, maybe because of background composition.)
 				var transform = _mastheadElement.TransformToVisual(this);
 				var mastheadElementStart = transform.TransformPoint(new Point(0, 0)).Y + _scrollViewer.VerticalOffset;
 				MastheadEnd = mastheadElementStart + _mastheadElement.ActualHeight;
-#endif
 				return MastheadEnd;
 			}
 
