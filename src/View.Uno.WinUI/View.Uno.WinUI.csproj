@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-windows10.0.19041;net7.0-ios;net7.0-android;net7.0-macos;net7.0-maccatalyst;</TargetFrameworks>
+		<TargetFrameworks>net7.0-windows10.0.19041;net7.0-ios;net7.0-android;net7.0-macos;net7.0-maccatalyst;net7.0</TargetFrameworks>
 		<LangVersion>11.0</LangVersion>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
@@ -52,6 +52,10 @@
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows10'))">
 		<DefineConstants>$(DefineConstants);WINDOWS_WINUI</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0'">
+		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.19041'">
