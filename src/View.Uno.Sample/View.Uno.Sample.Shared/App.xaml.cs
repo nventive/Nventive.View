@@ -33,7 +33,7 @@ namespace View.Uno.Sample
 
 			this.InitializeComponent();
 
-#if HAS_UNO || WINDOWS_UWP
+#if HAS_UNO
 			this.Suspending += OnSuspending;
 #endif
 		}
@@ -135,8 +135,6 @@ namespace View.Uno.Sample
 			{
 #if __IOS__
 				builder.AddProvider(new global::Uno.Extensions.Logging.OSLogLoggerProvider());
-#elif WINDOWS_UWP
-				builder.AddDebug();
 #else
 				builder.AddConsole();
 #endif

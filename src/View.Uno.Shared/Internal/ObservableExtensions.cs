@@ -7,7 +7,7 @@ using Uno;
 
 #if WINUI
 using Microsoft.UI.Xaml;
-#elif WINDOWS_UWP || __WASM__
+#elif __WASM__
 using Windows.UI.Xaml;
 #elif __ANDROID__ || __IOS__
 using Windows.UI.Xaml;

@@ -5,8 +5,6 @@ using System.Globalization;
 using System.Text;
 #if WINUI
 using Microsoft.UI.Xaml;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml;
 #else
 using System.Windows;
 #endif

@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || WINDOWS_WINUI
+﻿#if WINDOWS_WINUI
 using System;
 
 namespace Nventive.View.Controls

@@ -1,14 +1,10 @@
-﻿#if WINDOWS_UWP || WINUI
+﻿#if WINUI
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if WINUI
 using Microsoft.UI.Xaml;
-#else
-using Windows.UI.Xaml;
-#endif
 
 namespace Nventive.View
 {

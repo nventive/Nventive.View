@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || WINUI
+﻿#if __ANDROID__ || __IOS__ || WINUI
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,10 +9,6 @@ using Microsoft.UI.Xaml.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 #endif
-#if WINDOWS_UWP
-using IDependencyObject = Windows.UI.Xaml.DependencyObject;
-#endif
-
 
 namespace Nventive.View.Extensions
 {

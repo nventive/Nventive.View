@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
+﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINDOWS
 using System.Collections;
 using System.ComponentModel;
 using System;
@@ -91,15 +91,8 @@ namespace Nventive.View.Extensions
 	[Windows.UI.Xaml.Data.Bindable]
 #endif
 	public partial class ComboBoxContainer : DependencyObject
-#if WINDOWS_UWP
-		, INotifyPropertyChanged
-#endif
 	{
 		private ComboBox _owner;
-
-#if WINDOWS_UWP
-			public event PropertyChangedEventHandler PropertyChanged;
-#endif
 
 		public ComboBoxContainer(ComboBox owner)
 		{
@@ -147,14 +140,6 @@ namespace Nventive.View.Extensions
 		internal void UpdateSelectedItem(object newValue)
 		{
 			ComboBoxSynchronizerBehavior.SetSelectedItem(_owner, newValue);
-
-#if WINDOWS_UWP
-				//needed in Windows to nofify the ComboBox that InnerSelectedItem has changed
-				if (PropertyChanged != null)
-				{
-					PropertyChanged(this, new PropertyChangedEventArgs("InnerSelectedItem"));
-				}
-#endif
 		}
 
 		internal void Update()

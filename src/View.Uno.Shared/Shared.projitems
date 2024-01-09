@@ -26,7 +26,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.Android.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.iOS.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controls\SwipeRefresh\SwipeRefresh.UWP.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ZoomControl\ResetViewPortZoomControlBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ZoomControl\ZoomControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ConverterBase.cs" />
@@ -81,9 +80,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\MultipleTap\MultipleTapExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\Page\PageBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\PasswordBox\PasswordBoxBehavior.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\Rect\RectExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ScrollViewer\ScrollViewerExtensions.ScrollIndicatorStyle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ScrollViewer\ScrollViewerExtensions.UWP.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\SplitView\SplitViewBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\SplitView\SplitViewExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\TextBlock\HtmlTextBlockBehavior.cs" />

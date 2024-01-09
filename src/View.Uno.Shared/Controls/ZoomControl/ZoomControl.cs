@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_WINUI
+﻿﻿#if __ANDROID__ || __IOS__ || MACOS || __WASM__ || WINDOWS_WINUI
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,11 +19,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Uno.Extensions;
 using Uno.Logging;
 using Uno.Disposables;
-#if WINDOWS_UWP
-using IFrameworkElement = Windows.UI.Xaml.FrameworkElement;
-using View = Windows.UI.Xaml.FrameworkElement;
-using Size = Windows.Foundation.Size;
-#elif WINUI
+#if WINUI
 using IFrameworkElement = Microsoft.UI.Xaml.FrameworkElement;
 using View = Microsoft.UI.Xaml.FrameworkElement;
 #elif __ANDROID__ || __IOS__ || __WASM__
@@ -347,14 +343,6 @@ namespace Nventive.View.Controls
 				default:
 					throw new NotImplementedException($"{nameof(ZoomControl)}.{nameof(Stretch)} doesn't support value {Stretch}.");
 			}
-
-#if WINDOWS_UWP
-			if (newMinZoomFactor < 0.1)
-			{
-				this.Log().Warn("ZoomControl couldn't make the content fit the viewport because it's more than 10 times its size. This is due to a limitation with the inner Windows ScrollViewer whose ZoomFactor can't go below 0.1.");
-				newMinZoomFactor = 0.1;
-			}
-#endif
 
 			_scrollViewer.MinZoomFactor = (float)newMinZoomFactor;
 			_scrollViewer.ChangeView(0, 0, (float)newMinZoomFactor, disableAnimation: true);

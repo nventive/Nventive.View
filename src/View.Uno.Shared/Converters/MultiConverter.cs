@@ -8,11 +8,6 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Markup;
 using GenericCulture = System.String;
-#elif WINDOWS_UWP
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Markup;
-using GenericCulture = System.String;
 #elif __ANDROID__ || __IOS__ || __WASM__
 using Windows.UI.Xaml;
 using GenericCulture = System.String;
@@ -37,7 +32,7 @@ namespace Nventive.View.Converters
 	/// This converter may be used when we need multiple steps of conversion from the initial value to the result.
 	/// </summary>
 
-#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
+#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
 	[ContentProperty(Name = "Converters")]
 #else
 	[ContentProperty("Converters")]
@@ -75,11 +70,7 @@ namespace Nventive.View.Converters
 				return null;
 			}
 
-#if WINDOWS_UWP
-			if (!targetType.GetTypeInfo().IsAssignableFrom(currentValue.GetType().GetTypeInfo()))
-#else
 			if (!targetType.IsAssignableFrom(currentValue.GetType()))
-#endif
 			{
 				throw new InvalidOperationException("Conversion chain does not result in the proper type.");
 			}
@@ -112,11 +103,7 @@ namespace Nventive.View.Converters
 				return null;
 			}
 
-#if WINDOWS_UWP
-			if (!targetType.GetTypeInfo().IsAssignableFrom(currentValue.GetType().GetTypeInfo()))
-#else
 			if (!targetType.IsAssignableFrom(currentValue.GetType()))
-#endif
 			{
 				throw new InvalidOperationException("Conversion chain does not result in the proper type.");
 			}

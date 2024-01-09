@@ -4,10 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-#if WINDOWS_UWP
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-#elif __ANDROID__ || __IOS__
+#if __ANDROID__ || __IOS__
 // TODO
 #else
 using System.Windows;

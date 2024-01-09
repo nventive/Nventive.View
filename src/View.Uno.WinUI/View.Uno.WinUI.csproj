@@ -1,7 +1,7 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-windows10.0.18362;netstandard2.0;net6.0-ios;net6.0-android;net6.0-macos;net6.0-maccatalyst;</TargetFrameworks>
-		<LangVersion>10.0</LangVersion>
+		<TargetFrameworks>net7.0-windows10.0.19041;net7.0-ios;net7.0-android;net7.0-macos;net7.0-maccatalyst;net7.0</TargetFrameworks>
+		<LangVersion>11.0</LangVersion>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<RootNamespace>Nventive.View</RootNamespace>
@@ -13,6 +13,7 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageTags>view;mvvm;ios;android;maui;winui;WinAppSDK;</PackageTags>
 		<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
+		<ExtrasDefaultDesignerFileSuffix Condition="'$(ExtrasDefaultDesignerFileSuffix)' == ''">.Designer</ExtrasDefaultDesignerFileSuffix>
 
 		<!-- TODO: XAML merge will need to be implemented in the future, like it is implemented for the Uno project currently-->
 		<!-- https://github.com/nventive/Nventive.View/issues/48 -->
@@ -28,12 +29,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.WinUI" Version="4.1.9" />
+		<PackageReference Include="Uno.WinUI" Version="5.0.19" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.19" />
 		<PackageReference Include="Uno.Core" Version="4.0.1" />
 		<PackageReference Include="Uno.SourceGenerationTasks" Version="4.1.0" />
 		<PackageReference Include="System.Reactive" Version="4.4.1" />
-		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.7" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
 		<PackageReference Include="Uno.XamlMerge.Task">
 			<Version>$(_Uno_XamlMerge_Task_Version)</Version>
 		</PackageReference>
@@ -53,61 +54,49 @@
 		<DefineConstants>$(DefineConstants);WINDOWS_WINUI</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0'">
 		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'=='net6.0-windows10.0.18362'">
+	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.19041'">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.3" />
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22000.24" />
 		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22000.24" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'!='net6.0-windows10.0.18362'">
+	<ItemGroup Condition="'$(TargetFramework)'!='net7.0-windows10.0.19041'">
 		<Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 		<Compile Update="**\*.xaml.cs">
 			<DependentUpon>%(Filename)</DependentUpon>
 		</Compile>
 	</ItemGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0-android'">
-		<!-- Workaround: https://github.com/unoplatform/uno/issues/9723 -->
-		<_AndroidApiLevel>31</_AndroidApiLevel>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-	  <DefineConstants>$(DefineConstants);__WASM__;__NETSTANDARD__</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
-	  <DefineConstants>$(DefineConstants);__WASM__;__NETSTANDARD__</DefineConstants>
-	</PropertyGroup>
-
 	<ItemGroup>
 		<UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PRIResource Remove="Converters\PrettyDateConverter\Resources\**\PrettyDateFormatterStrings.resw" />
+		<PRIResource Remove="Converters\PrettyDateConverter\Resources\**\PrettyDateFormatterStrings.resw" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="Converters\PrettyDateConverter\Resources\**\PrettyDateFormatterStrings.resw" />
+		<None Include="Converters\PrettyDateConverter\Resources\**\PrettyDateFormatterStrings.resw" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.Designer.cs">
-	    <DependentUpon>$([MSBuild]::ValueOrDefault('%(Filename)', '').Replace('$(ExtrasDefaultDesignerFileSuffix)', '.resx'))</DependentUpon>
-	  </Compile>
+		<Compile Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.Designer.cs">
+			<DependentUpon>$([MSBuild]::ValueOrDefault('%(Filename)', '').Replace('$(ExtrasDefaultDesignerFileSuffix)', '.resx'))</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.*.resx">
-	    <_SdkHasLangId>$([System.Text.RegularExpressions.Regex]::IsMatch('%(FileName)', '$(_SdkLangIdRegEx)'))</_SdkHasLangId>
-	    <DependentUpon>$([System.Text.RegularExpressions.Regex]::Replace('%(FileName)', '$(_SdkLangIdRegEx)', '%(Extension)'))</DependentUpon>
-	  </EmbeddedResource>
+		<EmbeddedResource Update="Converters\PrettyDateConverter\Resources\PrettyDateFormatterStrings.*.resx">
+			<_SdkHasLangId>$([System.Text.RegularExpressions.Regex]::IsMatch('%(FileName)', '$(_SdkLangIdRegEx)'))</_SdkHasLangId>
+			<DependentUpon>$([System.Text.RegularExpressions.Regex]::Replace('%(FileName)', '$(_SdkLangIdRegEx)', '%(Extension)'))</DependentUpon>
+		</EmbeddedResource>
 	</ItemGroup>
 
+	<Import Project="winappsdk-workaround.targets" />
 	<Import Project="..\View.Uno.Shared\Shared.projitems" Label="Shared" />
 	<Import Project="$(NuGetPackageRoot)uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
 </Project>

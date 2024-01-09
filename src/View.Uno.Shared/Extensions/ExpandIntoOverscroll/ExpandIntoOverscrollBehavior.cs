@@ -1,4 +1,4 @@
-﻿#if WINDOWS_UWP || __ANDROID__ || __IOS__ || __WASM__ || WINUI
+﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINUI
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,9 +12,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Controls;
 #endif
 using Windows.Foundation;
-#if WINDOWS_UWP
-using IFrameworkElement = Windows.UI.Xaml.FrameworkElement;
-#elif __IOS__
+#if __IOS__
 using UIKit;
 using Uno.Extensions;
 #endif
