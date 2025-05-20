@@ -198,7 +198,7 @@ namespace Nventive.View.Extensions
 			if (box != null && dismissKeybaord)
 			{
 				Observable
-					.FromEventPattern<KeyEventHandler, object, KeyRoutedEventArgs>(
+					.FromEventPattern<Microsoft.UI.Xaml.Input.KeyEventHandler, object, KeyRoutedEventArgs>(
 						h => box.KeyUp += h,
 						h => box.KeyUp -= h,
 						Scheduler.Immediate

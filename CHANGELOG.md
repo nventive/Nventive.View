@@ -4,10 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [0.6.1]
+## [0.7.0]
+
+### Added
+* Added support for .NET 8.
 
 ### Removed
 * Removed NuGet package Uno.SourceGenerationTasks.
+
+### Changed
+* Updated to net8.0-windows10.0.22621.0 (and its dependencies).
+
+### Fixed
+* Fix issue with namespaces.
 
 ## [0.6.0]
 

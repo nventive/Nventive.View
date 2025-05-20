@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-windows10.0.19041;net7.0-ios;net7.0-android;net7.0-macos;net7.0-maccatalyst;net7.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-windows10.0.22621;net8.0-ios;net8.0-android;net8.0-macos;net8.0-maccatalyst;net8.0</TargetFrameworks>
 		<LangVersion>11.0</LangVersion>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
@@ -18,7 +18,7 @@
 		<!-- TODO: XAML merge will need to be implemented in the future, like it is implemented for the Uno project currently-->
 		<!-- https://github.com/nventive/Nventive.View/issues/48 -->
 		<!-- Xaml Merge -->
-		<_Uno_XamlMerge_Task_Version>1.1.0-dev.13</_Uno_XamlMerge_Task_Version>
+		<_Uno_XamlMerge_Task_Version>1.33.1</_Uno_XamlMerge_Task_Version>
 		<XamlMergeOutputFile>$(MSBuildProjectDirectory)\Themes\MergedResourceDictionaries.xaml</XamlMergeOutputFile>
 
 		<!-- Needed for Source Link support -->
@@ -27,12 +27,12 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
 		<PackageReference Include="Uno.WinUI" Version="5.0.19" />
 		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.19" />
 		<PackageReference Include="Uno.Core" Version="4.0.1" />
-		<PackageReference Include="System.Reactive" Version="4.4.1" />
+		<PackageReference Include="System.Reactive" Version="6.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
 		<PackageReference Include="Uno.XamlMerge.Task">
 			<Version>$(_Uno_XamlMerge_Task_Version)</Version>
@@ -41,7 +41,7 @@
 
 	<ItemGroup>
 		<!-- Needed for Source Link support -->
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
 	</ItemGroup>
 
 	<!-- Xaml Merge -->
@@ -53,17 +53,15 @@
 		<DefineConstants>$(DefineConstants);WINDOWS_WINUI</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)'=='net7.0'">
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
 		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.19041'">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.3" />
-		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22000.24" />
-		<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22000.24" />
+	<ItemGroup Condition="'$(TargetFramework)'=='net8.0-windows10.0.22621'">
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250108002" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'!='net7.0-windows10.0.19041'">
+	<ItemGroup Condition="'$(TargetFramework)'!='net8.0-windows10.0.22621'">
 		<Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 		<Compile Update="**\*.xaml.cs">
 			<DependentUpon>%(Filename)</DependentUpon>
@@ -97,5 +95,5 @@
 
 	<Import Project="winappsdk-workaround.targets" />
 	<Import Project="..\View.Uno.Shared\Shared.projitems" Label="Shared" />
-	<Import Project="$(NuGetPackageRoot)uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
+	<Import Project="$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)\build\Uno.XamlMerge.Task.targets" Condition="'$(TargetFramework)' == '' and '$(TargetFrameworks)'!='' and exists('$(NuGetPackageRoot)\uno.xamlmerge.task\$(_Uno_XamlMerge_Task_Version)')" />
 </Project>
