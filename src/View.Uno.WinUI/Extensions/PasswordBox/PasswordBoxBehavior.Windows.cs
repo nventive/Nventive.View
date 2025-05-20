@@ -1,9 +1,6 @@
 ﻿#if WINDOWS
 using System;
-using System.Net;
-using System.Windows;
 using Uno.Extensions;
-using System.Windows.Input;
 using Uno.Logging;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -13,7 +10,6 @@ using Uno.Disposables;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using Microsoft.UI.Dispatching;
-using Windows.UI.Core;
 
 namespace Nventive.View.Extensions
 {
@@ -201,7 +197,7 @@ namespace Nventive.View.Extensions
 		{
 			var subscriptions = new CompositeDisposable(2);
 
-			Observable.FromEventPattern<KeyEventHandler, KeyRoutedEventArgs>(
+			Observable.FromEventPattern<Microsoft.UI.Xaml.Input.KeyEventHandler, KeyRoutedEventArgs>(
 				h => h.Invoke,
 				h => AssociatedObject.KeyUp += h,
 				h => AssociatedObject.KeyUp -= h,
