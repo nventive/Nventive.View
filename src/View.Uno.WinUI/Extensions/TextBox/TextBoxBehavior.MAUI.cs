@@ -1,4 +1,4 @@
-﻿#if __ANDROID__ || __IOS__ || __MACOS__
+﻿#if __ANDROID__ || __IOS__
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
 
@@ -21,9 +21,6 @@ namespace Nventive.View.Extensions
 				nextControl.StartBringIntoView();
 #elif __ANDROID__
 				nextControl.RequestFocus();
-
-#elif __MACOS__
-				nextControl.StartBringIntoView();
 #endif
 			}
 		}

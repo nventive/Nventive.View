@@ -14,7 +14,7 @@ variables:
   value: View.sln
 # Pool names
 - name: windowsHostedAgentImage
-  value: 'windows-2022'
+  value: 'windows-2025'
 
 stages:
 - stage: Build

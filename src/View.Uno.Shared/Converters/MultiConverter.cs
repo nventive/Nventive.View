@@ -32,7 +32,7 @@ namespace Nventive.View.Converters
 	/// This converter may be used when we need multiple steps of conversion from the initial value to the result.
 	/// </summary>
 
-#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
+#if __ANDROID__ || __IOS__ || __WASM__ || WINUI
 	[ContentProperty(Name = "Converters")]
 #else
 	[ContentProperty("Converters")]

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows10.0.22621;net8.0-ios;net8.0-android;net8.0-macos;net8.0-maccatalyst;net8.0</TargetFrameworks>
-		<LangVersion>11.0</LangVersion>
+		<TargetFrameworks>net10.0-windows10.0.22621;net10.0-ios;net10.0-android;net10.0-maccatalyst;net10.0</TargetFrameworks>
+		<LangVersion>14.0</LangVersion>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<RootNamespace>Nventive.View</RootNamespace>
@@ -29,11 +29,11 @@
 	</PropertyGroup>
 	
 	<ItemGroup>
-		<PackageReference Include="Uno.WinUI" Version="5.0.19" />
-		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="5.0.19" />
+		<PackageReference Include="Uno.WinUI" Version="6.3.62" />
+		<PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="6.3.62" />
 		<PackageReference Include="Uno.Core" Version="4.0.1" />
 		<PackageReference Include="System.Reactive" Version="6.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
 		<PackageReference Include="Uno.XamlMerge.Task">
 			<Version>$(_Uno_XamlMerge_Task_Version)</Version>
 		</PackageReference>
@@ -53,15 +53,15 @@
 		<DefineConstants>$(DefineConstants);WINDOWS_WINUI</DefineConstants>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
+	<PropertyGroup Condition="'$(TargetFramework)'=='net10.0'">
 		<DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
 	</PropertyGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'=='net8.0-windows10.0.22621'">
+	<ItemGroup Condition="'$(TargetFramework)'=='net10.0-windows10.0.22621'">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250108002" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'!='net8.0-windows10.0.22621'">
+	<ItemGroup Condition="'$(TargetFramework)'!='net10.0-windows10.0.22621'">
 		<Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
 		<Compile Update="**\*.xaml.cs">
 			<DependentUpon>%(Filename)</DependentUpon>

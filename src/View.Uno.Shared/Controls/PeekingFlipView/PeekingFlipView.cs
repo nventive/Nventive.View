@@ -1,4 +1,4 @@
-﻿#if __ANDROID__ || __IOS__ || MACOS || __WASM__ || WINDOWS_WINUI
+﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_WINUI
 using System;
 using System.Collections;
 using System.Linq;
@@ -308,7 +308,7 @@ namespace Nventive.View.Controls
 
 				return new Point(buffer[0], buffer[1]);
 			}
-#elif __IOS__ || __MACOS__
+#elif __IOS__
 			var unit = new CoreGraphics.CGRect(0, 0, 1, 1);
 			var transform = this.ConvertRectFromView(unit, item);
 			var offset = new Point(transform.X, transform.Y);

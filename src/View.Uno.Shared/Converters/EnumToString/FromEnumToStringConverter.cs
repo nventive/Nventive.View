@@ -56,7 +56,7 @@ namespace Nventive.View.Converters
 			switch (this.CharacterCasing)
 			{
 				case CharacterCasingOption.UpperCase:
-#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
+#if __ANDROID__ || __IOS__ || __WASM__ || WINUI
 					output = output.ToUpper();
 #else
 					output = output.ToUpper(culture);
@@ -64,7 +64,7 @@ namespace Nventive.View.Converters
 					break;
 
 				case CharacterCasingOption.LowerCase:
-#if __ANDROID__ || __IOS__ || __MACOS__ || __WASM__ || WINUI
+#if __ANDROID__ || __IOS__ || __WASM__ || WINUI
 					output = output.ToLower();
 #else
 					output = output.ToLower(culture);
