@@ -52,7 +52,6 @@ namespace Nventive.View
 		/// </summary>
 		internal static IObservable<DependencyPropertyChanged<TValue>> ObservePropertyChanged<TValue>(this DependencyObject instance, DependencyProperty property)
 		{
-
 			IObservable<DependencyPropertyChanged<TValue>> observer = null;
 #if WINUI
 			observer = Observable.Create<DependencyPropertyChanged<TValue>>(obs =>
@@ -80,7 +79,7 @@ namespace Nventive.View
 				};
 			});
 
-#elif __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#elif __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			observer = Observable.Create<DependencyPropertyChanged<TValue>>(obs => 
 			{
 
@@ -159,7 +158,7 @@ namespace Nventive.View
 
 		internal static T FindFirstParent<T>(this _DependencyObject element, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -169,7 +168,7 @@ namespace Nventive.View
 
 		internal static T FindFirstParent<T>(this _DependencyObject element, Func<T, bool> selector, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -179,7 +178,7 @@ namespace Nventive.View
 
 		internal static T FindFirstChild<T>(this _DependencyObject element, int? childLevelLimit = null, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -189,7 +188,7 @@ namespace Nventive.View
 
 		internal static T FindFirstChild<T>(this _DependencyObject element, Func<T, bool> selector, int? childLevelLimit = null, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -199,7 +198,7 @@ namespace Nventive.View
 
 		internal static T InnerFindFirstChild<T>(IEnumerable<_DependencyObject> elements, Func<T, bool> selector, int? childLevelLimit, bool includeCurrentLevel)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -224,7 +223,7 @@ namespace Nventive.View
 		/// </summary>
 		internal static IEnumerable<T> FindAllLogicalChildren<T>(this _DependencyObject element, int? childLevelLimit = null, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -237,7 +236,7 @@ namespace Nventive.View
 		/// </summary>
 		internal static IEnumerable<T> FindAllLogicalChildren<T>(this _DependencyObject element, Func<T, bool> selector, int? childLevelLimit = null, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -248,7 +247,7 @@ namespace Nventive.View
 		// Remark : Could be even more optimal to use full yield with no recursion (ie.: Stack)
 		internal static IEnumerable<T> InnerFindAllLogicalChildren<T>(_DependencyObject reference, Func<T, bool> selector, int? childLevelLimit, bool includeCurrentLevel)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -319,7 +318,7 @@ namespace Nventive.View
 
 		internal static IEnumerable<T> FindAllChildren<T>(this _DependencyObject element, int? childLevelLimit = null, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -329,7 +328,7 @@ namespace Nventive.View
 
 		internal static IEnumerable<T> FindAllChildren<T>(this _DependencyObject element, Func<T, bool> selector, int? childLevelLimit = null, bool includeCurrent = true)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -340,7 +339,7 @@ namespace Nventive.View
 		// Remark : Could be even more optimal to use full yield with no recursion (ie.: Stack)
 		internal static IEnumerable<T> InnerFindAllChildren<T>(_DependencyObject reference, Func<T, bool> selector, int? childLevelLimit, bool includeCurrentLevel)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -401,7 +400,7 @@ namespace Nventive.View
 
 		internal static T GetChildElementByName<T>(this _DependencyObject parent, int maximumDepth, string name)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject
@@ -440,7 +439,7 @@ namespace Nventive.View
 
 		internal static T GetFirstParentElement<T>(this _DependencyObject child)
 			where T :
-#if __ANDROID__ || __IOS__ || __MACOS__ || __MACCATALYST__ || __WASM__
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __WASM__
 			class,
 #endif
 			_DependencyObject

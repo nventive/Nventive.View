@@ -42,7 +42,7 @@ namespace Nventive.View.Converters
 				return string.Empty;
 			}
 
-#if !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
+#if !__ANDROID__ && !__IOS__ && !__WASM__ && !WINUI
 			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
 #else
 			var cultureInfo = culture != null ? new CultureInfo(culture) : CultureInfo.CurrentCulture;

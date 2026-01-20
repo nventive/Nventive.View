@@ -1,4 +1,4 @@
-﻿#if __ANDROID__ || __IOS__ || MACOS || __WASM__ || WINDOWS_WINUI
+﻿#if __ANDROID__ || __IOS__ || __WASM__ || WINDOWS_WINUI
 using System.Windows.Input;
 #if WINUI
 using Microsoft.UI.Xaml;

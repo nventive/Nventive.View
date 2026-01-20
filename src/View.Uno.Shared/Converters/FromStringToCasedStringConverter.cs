@@ -55,7 +55,7 @@ namespace Nventive.View.Converters
 				return value;
 			}
 
-#if !__ANDROID__ && !__IOS__ && !__MACOS__ && !__WASM__ && !WINUI
+#if !__ANDROID__ && !__IOS__ && !__WASM__ && !WINUI
 			var cultureInfo = culture ?? CultureInfo.CurrentCulture;
 			return this.CasingType == Converters.CasingType.LowerCase ?
 				text.ToLower(cultureInfo) : 

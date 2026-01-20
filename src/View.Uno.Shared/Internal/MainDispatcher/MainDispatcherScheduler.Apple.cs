@@ -1,4 +1,4 @@
-﻿#if __IOS__ || __MACOS__
+﻿#if __IOS__
 using System;
 using System.Reactive.Concurrency;
 using System.Reactive.Disposables;
